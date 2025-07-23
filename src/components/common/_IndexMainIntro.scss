@@ -1,0 +1,102 @@
+
+.main-intro{
+
+    .main-intro-bg{
+        padding: 48px 0;
+        border-bottom: 3px solid rgb(112, 150, 205);
+        width: 90%;
+        margin: 0 auto;
+        .main-intro-bg1{   
+            height: auto;
+            .img-box{
+                .box1
+                {
+                    width: 265px;
+                    height: 265px;
+                    background-color: #ffffff;
+                    border-radius: 50%;
+                    border: 5px solid rgb(112, 150, 205);
+                    
+                    .box2{
+                        width: 230px;
+                        height: 230px;
+                        border-radius: 50%;
+                        
+                    }
+                }
+
+            }
+        }
+
+        .main-intro-bg2{
+            height: auto;
+            .title-box{
+                .title{
+                    font-size: 28px;
+                    
+                }
+            }
+            .userData-box{
+
+                .resume-link{
+                    background-color:rgb(112, 150, 205);
+                    border-radius: 100px;
+                    color: #ffffff;
+                }
+                .phone-box{
+                    
+                }
+
+                .mail-box{
+                    
+                }
+            }
+
+            .nav-item-box{
+                gap:12px;
+                background-color: rgb(221, 233, 255);
+                padding: 12px 20px;
+                border-radius: 12px;
+                .my-tab-btn {
+                    
+                    color: rgb(112, 150, 205);
+                    background-color: white;
+                    font-size: 20px;
+                    border-radius: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+
+                    &.active {
+                        color: white;
+                        background-color: rgb(112, 150, 205);
+                    }
+
+                    &:hover {
+                        color: white;
+                        background-color: rgb(112, 150, 205);
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+.main-content{
+    width: 100%;
+
+    .main-content-box{
+        height: auto;
+
+        
+    }
+}
+
+
+
+
+
+
+
