@@ -49,7 +49,7 @@ function Portfolio ({userData,activeTab}) {
                                 </div>
                                 <div className='link-box'>
                                   <a href={item.gitHub} className='link-item' target="_blank" rel="noopener noreferrer">
-                                    <img className='link-icon-img' src="/images/desktop/icon/github.png" alt="" />
+                                    <img className='link-icon-img' src={`${import.meta.env.BASE_URL}images/desktop/icon/github.png`} alt="" />
                                     <p className='text'>GitHub</p> 
                                   </a>
                                   <a href={item.demo} className='link-item' target="_blank" rel="noopener noreferrer">
