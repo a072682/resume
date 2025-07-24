@@ -94,6 +94,10 @@ function IndexMainIntro() {
                         id:5,
                         text:"主要體現在切版上以及前端的功能運行的實現能力。",
                         },
+                        {
+                        id:6,
+                        text:"預設帳號為admin123,密碼:admin123",
+                        },
                     ],
                     gitHub:"https://github.com/a072682/HomeWork-Week-6",
                     demo:"https://a072682.github.io/HomeWork-Week-6/",
@@ -122,6 +126,10 @@ function IndexMainIntro() {
                         {
                         id:5,
                         text:"主要體現在切版上以及前端的功能運行的實現能力。",
+                        },
+                        {
+                        id:6,
+                        text:"預設信箱為admin123@gmail.com,密碼:admin123",
                         },
                     ],
                     gitHub:"https://github.com/a072682/HomeWork-Week-8",
