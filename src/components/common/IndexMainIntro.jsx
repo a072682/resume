@@ -238,6 +238,10 @@ function IndexMainIntro() {
                         id:8,
                         text:"主要體現在切版上以及使用API交互的實現能力",
                         },
+                        {
+                        id:9,
+                        text:"預設帳號信箱為admin123@gmail.com,密碼:admin123",
+                        },
                     ],
                     gitHub:"https://github.com/a072682/ReactHomeWork-8-back",
                     demo:"https://a072682.github.io/ReactHomeWork-8-back/",
