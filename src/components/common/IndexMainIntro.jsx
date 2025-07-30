@@ -164,6 +164,84 @@ function IndexMainIntro() {
                     gitHub:"https://github.com/a072682/2025ExperienceCampHomeWork02",
                     demo:"https://a072682.github.io/2025ExperienceCampHomeWork02/",
                     },
+                    {
+                    tag:"WEB",
+                    title:"服裝購物形象網站(前台)",
+                    img:`${import.meta.env.BASE_URL}images/desktop/web-img04.png`,
+                    textContent:[
+                        {
+                        id:1,
+                        text:"這是一個服裝購物形象網站",
+                        },
+                        {
+                        id:2,
+                        text:"與服裝購物形象網站(後台)進行聯動",
+                        },
+                        {
+                        id:3,
+                        text:"此作品為六角學院 2025 框架班作業八之作品。",
+                        },
+                        {
+                        id:4,
+                        text:"使用六角學院所提供的前後端API與後台進行連接",
+                        },
+                        {
+                        id:5,
+                        text:"此Demo包含首頁、產品頁、產品細節頁、購物車、付費頁面等顯示頁面。",
+                        },
+                        {
+                        id:6,
+                        text:"使用 React 和 bootstrap,react-router,Redux-Toolkit,SCSS,Swiper,gh-pages等套件。",
+                        },
+                        {
+                        id:7,
+                        text:"主要體現在切版上以及使用API交互的實現能力",
+                        },
+                    ],
+                    gitHub:"https://github.com/a072682/ReactHomeWork-8-front",
+                    demo:"https://a072682.github.io/ReactHomeWork-8-front/",
+                    },
+                    {
+                    tag:"WEB",
+                    title:"服裝購物形象網站(後台)",
+                    img:`${import.meta.env.BASE_URL}images/desktop/web-img05.png`,
+                    textContent:[
+                        {
+                        id:1,
+                        text:"這是一個服裝購物形象網站(後台)。",
+                        },
+                        {
+                        id:2,
+                        text:"與服裝購物形象網站(前台)進行聯動",
+                        },
+                        {
+                        id:3,
+                        text:"此作品為六角學院 2025 框架班作業八之作品。",
+                        },
+                        {
+                        id:4,
+                        text:"使用六角學院所提供的前後端API與後台進行連接",
+                        },
+                        {
+                        id:5,
+                        text:"此Demo包含產品設定、訂單設定、優惠卷設定、登入 / 燈出等顯示頁面。",
+                        },
+                        {
+                        id:6,
+                        text:"可以對產品進行新增/修改/刪除並與前台網站進行聯動",
+                        },
+                        {
+                        id:7,
+                        text:"使用 React 和 bootstrap,react-router,Redux-Toolkit,SCSS,Swiper,gh-pages等套件。",
+                        },
+                        {
+                        id:8,
+                        text:"主要體現在切版上以及使用API交互的實現能力",
+                        },
+                    ],
+                    gitHub:"https://github.com/a072682/ReactHomeWork-8-back",
+                    demo:"https://a072682.github.io/ReactHomeWork-8-back/",
+                    },
                 ]
             },
             {
@@ -222,7 +300,7 @@ function IndexMainIntro() {
                                             <h1 className='title text-center text-xl-start fw-900 lh-15 fontFamily'>{userData.name} / {userData.englishName}</h1>
                                         </div>
                                         <div className='userData-box d-flex flex-column justify-content-center align-items-center align-items-md-start row-gap-12'>
-                                            <a href="https://drive.google.com/file/d/1GfeOTv-IE7Y_az6ZYHs7gRUc4QDmTCsG/view" 
+                                            <a href="https://drive.google.com/file/d/1A-_f1RUlJzVmEvMZZ7e0Q6gStoEjDm3G/view" 
                                                 className=' py-8 px-24
                                                             d-flex justify-content-center align-items-center
                                                             resume-link'
