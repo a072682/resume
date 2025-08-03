@@ -1,4 +1,4 @@
-.portfolio{
+.portfolio02{
 
     .portfolio-title-box{
         padding: 0 12px;
@@ -11,7 +11,7 @@
         }
     }
 
-    .portfolio-cards-box,.portfolio-cards-mb-box{
+    .portfolio-cards-box{
         margin-top: 24px;
         display: flex;
         flex-direction: column;
@@ -67,14 +67,16 @@
                 }
 
                 .link-box{
+                    width: 100%;
                     display: flex;
                     justify-content: end;
                     align-items: center;
                     gap: 24px;
-                    margin-left: auto;
+                    // margin-left: auto;
                     margin-top: auto;
                     @media (max-width: 992px) { 
                         margin-top: 24px;
+                        gap: 8px;
                     }
                     .link-item{
                         min-width: 125px;
@@ -87,6 +89,10 @@
                         border-radius: 12px;
                         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
                         text-decoration: none;
+                        @media (max-width: 992px) { 
+                            padding: 8px 12px;
+                            min-width: auto;
+                        }
                         cursor: pointer;
                         .link-icon-img{
                             width: 24px;
@@ -105,78 +111,4 @@
             }
         }
     }
-
-    .portfolio-cards-mb-box{
-        position: relative;
-        .portfolio-card{
-           
-            .img{
-                aspect-ratio: 700/435;
-            }
-        }
-        .swiper-button-prev,
-        .swiper-button-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 56px;
-            height: 56px;
-            background-color: #ffffff;
-            color:rgb(112, 150, 205);
-            border-radius: 12px;
-            z-index: 10;
-            &:hover{
-                background-color: rgb(112, 150, 205);
-                color:#ffffff;
-            }
-            @media (max-width: 768px) {
-                width: 28px;
-                height: 28px;
-            }
-        }
-
-        .swiper-button-prev {
-            left: 20px;
-            @media (max-width: 768px) {
-                left: 10px;
-            }
-        }
-
-        .swiper-button-next {
-            right: 20px;
-            @media (max-width: 768px) {
-                right: 10px;
-            }
-        }
-
-        .portfolio-mb-btn-box{
-            margin-top: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            .portfolio-mb-btn{
-                width: 100%;
-                color: rgb(112, 150, 205);
-                background-color: white;
-                font-size: 20px;
-                border-radius: 12px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: none;
-                padding: 8px 16px;
-                &.active {
-                    color: white;
-                    background-color: rgb(112, 150, 205);
-                }
-
-                &:hover {
-                    color: white;
-                    background-color: rgb(112, 150, 205);
-                }
-            }
-        }
-        
-    }
 }
-

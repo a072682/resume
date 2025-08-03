@@ -8,12 +8,15 @@ import router from './router'
 import { Provider } from 'react-redux'// Provider為需要引入的插件
 import { store } from './store.js'// store為引入的store.js
 import './assets/styles/all.scss'
+import { ContextProvider } from './components/common/Context.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router}/>
+      <ContextProvider> {/* ⬅️ 加上這層 */}
+        <RouterProvider router={router}/>
+      </ContextProvider>
     </Provider>
   </StrictMode>,
 )

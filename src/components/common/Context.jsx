@@ -1,18 +1,12 @@
-import './_IndexMainIntro.scss';
-import { useState } from 'react';
-import { Tab, Nav } from 'react-bootstrap';
-import { motion, AnimatePresence } from 'framer-motion';
-import Skills from './Skills';
-import Portfolio from './Portfolio';
-import Experience from './Experience';
+import { createContext, useContext, useState } from "react";
 
+// 1. 建立 Context 物件
+const ContextData = createContext();
 
-
-function IndexMainIntro() {
-
-    const [activeTab, setActiveTab] = useState('作品集');
-
-    const userData = {
+// 2. 建立 Provider 元件
+// ContextProvider是main.jsx所使用的名稱
+export const ContextProvider = ({ children }) => {
+  const userData = {
         name:"余亮言",
         img:`${import.meta.env.BASE_URL}images/desktop/USER-ID.jpg`,
         englishName:"Andy Yu",
@@ -258,123 +252,17 @@ function IndexMainIntro() {
                 ]
             },
         ]
-    }
-
+    };
   return (
-    <>
-        <Tab.Container activeKey={activeTab} onSelect={(key) => setActiveTab(key)}>
-            {/* activeKey 表示「目前要顯示哪個 Tab 頁籤」的 key，它對應到 Tab.Pane 的 eventKey */}
-            {/* onSelect 當使用者點擊新的頁籤時會觸發，把被點擊的 eventKey 傳入 callback */}
-            {/* (key) => setActiveTab(key)這行就是說「當某個 Tab 被點到，就把該 tab 的 key 存入 activeTab state」 */}
-            <div className='main-intro w-100'>
-                <div className='main-intro-bg'>
-                    <div className='bg-color'></div>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-12 col-lg-6">
-                                <div className='main-intro-bg1 d-flex justify-content-center align-items-center'>
-                                    <div className='img-box'>
-                                        <div className='box1 d-flex justify-content-center align-items-center'> 
-                                            <img className='box2' src={userData.img} alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-12 col-lg-6">
-                                <div className='main-intro-bg2 mt-24 mt-md-0 d-flex flex-column justify-content-center align-items-center align-items-lg-start row-gap-12'>
-                                    <div className='title-box'>
-                                        <h1 className='title text-center text-xl-start fw-900 lh-15 fontFamily'>{userData.name} / {userData.englishName}</h1>
-                                        <h2 className='title text-center text-xl-start fw-900 lh-15 fontFamily sp-set'>{userData.name}</h2>
-                                        <h2 className='title text-center text-xl-start fw-900 lh-15 fontFamily sp-set'>{userData.englishName}</h2>
-                                    </div>
-                                    <div className='userData-box d-flex flex-column justify-content-center align-items-center align-items-md-start row-gap-12'>
-                                        
-                                        <div className='phone-box d-flex justify-content-start align-items-center gap-12'>
-                                            <span className="material-symbols-outlined fs-24">
-                                                phone_enabled
-                                            </span>
-                                            <span className='fs-20'>{userData.phone}</span>
-                                        </div>
-                                        <div className='mail-box d-flex justify-content-start align-items-center gap-12'>
-                                            <span className="material-symbols-outlined fs-24">
-                                                mail
-                                            </span>
-                                            <span className='fs-20'>{userData.email}</span>
-                                        </div>
-                                    </div>
-                                    {/* Tab 選單區 */}
-                                        <Nav className="nav-item-box">
-                                            <a href="https://drive.google.com/file/d/1A-_f1RUlJzVmEvMZZ7e0Q6gStoEjDm3G/view" 
-                                                className=' py-8 px-24
-                                                            d-flex justify-content-center align-items-center
-                                                            resume-link'
-                                                target="_blank" rel="noopener noreferrer">
-                                                <span className="material-symbols-outlined fs-24 me-12">
-                                                        file_open
-                                                </span>
-                                                查看履歷
-                                            </a>
-                                            {
-                                                userData.navItem.map((item)=>{
-                                                    return(
-                                                        <Nav.Item key={item.title}>
-                                                            <Nav.Link className="my-tab-btn" eventKey={item.title}>{item.title}</Nav.Link>
-                                                        </Nav.Item>
-                                                    )
-                                                })
-                                            }
-                                        </Nav>
-                                </div>
-                            </div>
-                                    
-                                {/* </div> */}
-                            
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <div className='main-content'>
-                <div className='main-content-box'>       
-                    <Tab.Content>
-                        {
-                            userData.navItem.map((item) => {
-                                return (
-                                <Tab.Pane key={item.title} eventKey={item.title}>
-                                    <AnimatePresence mode="wait">
-                                    {activeTab === item.title && (
-                                        <motion.div
-                                        key={item.title}
-                                        initial={{ opacity: 0, y: 0 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0 }}
-                                        transition={{ duration: 0.5, ease: 'easeOut' }}
-                                        >
-                                        {
-                                            (() => {
-                                                switch (item.title) {
-                                                    case "經歷":
-                                                        return <Experience userData={userData} activeTab={activeTab}/>;
-                                                    case "作品集":
-                                                        return <Portfolio userData={userData} activeTab={activeTab}/>;
-                                                    case "技能":
-                                                        return <Skills userData={userData} activeTab={activeTab}/>;
-                                                }
-                                            })()//最後面加()代表馬上執行
-                                        }
-                                        </motion.div>
-                                    )}
-                                    </AnimatePresence>
-                                </Tab.Pane>
-                                );
-                            })
-                        }
-                    </Tab.Content>
-                </div>
-            </div>
-        </Tab.Container>
-    </>
+    // 被UserContext.Provider包住的就是可以傳送資料的
+    // value為要傳送的資料
+    <ContextData.Provider value={{ userData }}> 
+      {children}
+    </ContextData.Provider>
   );
-}
+};
 
-export default IndexMainIntro;
+// 3. 建立自定義 Hook，讓使用更簡潔
+//在別的頁面需要呼叫檔案時import { useUserData } from '../components/common/Context'
+//接著進行解構const { username, setUsername } = useUserData()
+export const useUserData = () => useContext(ContextData);
