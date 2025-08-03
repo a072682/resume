@@ -234,13 +234,13 @@ function IndexMainIntro() {
                     {
                         title:"Website",
                         item:[
-                            "Html","CSS","javascript","React","Bootstrap5","Vite","Scss","Axios","GitHub",
+                            "Html","CSS","JavaScript ES6+","React","Bootstrap5","Scss","Axios"
                         ],
                     },
                     {
                         title:"Tools",
                         item:[
-                            "VisualStudioCode","PostgreSQL","DBeaver","Postman","DockerDesktop",
+                            "VisualStudioCode","PostgreSQL","DBeaver","Postman","Docker","Vite","GitHub"
                         ],
                     },
                     {

@@ -6,7 +6,7 @@ function Skills({userData,activeTab}){
 
   return(
     <>
-      <section id="skills" className="my-24">
+      <section id="skills" className="skills py-24">
         <div className="container">
           <div className="row">
             <div className="col">

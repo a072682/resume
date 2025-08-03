@@ -1,23 +1,28 @@
-.skills-title{
-    padding: 0 12px;
-    border-left: 5px solid rgb(112, 150, 205);
-    h2{
-        font-size: 32px;
+
+.skills{
+    background-color: #eff6ff;
+    .skills-title{
+        padding: 0 12px;
+        border-left: 5px solid rgb(112, 150, 205);
+        h2{
+            font-size: 32px;
+            color: rgb(112, 150, 205);
+            border-bottom: 3px solid rgb(112, 150, 205);
+            font-weight: 500;
+        }
+    }
+
+    .skill-title{
+        font-size: 28px;
         color: rgb(112, 150, 205);
         border-bottom: 3px solid rgb(112, 150, 205);
         font-weight: 500;
     }
-}
 
-.skill-title{
-    font-size: 28px;
-    color: rgb(112, 150, 205);
-    border-bottom: 3px solid rgb(112, 150, 205);
-    font-weight: 500;
-}
-
-.skill-list{
-    li{
-        font-size: 24px;
+    .skill-list{
+        li{
+            font-size: 24px;
+        }
     }
 }
+

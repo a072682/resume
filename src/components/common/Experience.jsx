@@ -7,7 +7,7 @@ function Experience ({userData,activeTab}){
 
     return(
         <>
-            <div className='experience my-24'>
+            <div className='experience py-24'>
                 <div className="container">
                     <div className='row'>
                         <div className='col'>
@@ -33,9 +33,9 @@ function Experience ({userData,activeTab}){
                                                     </div>
                                                 </div>
                                                 <div className={`${Number(item.id) % 2 === 0 ? 'experience-text2' : 'experience-text1'}`}>
-                                                    <time className='fs-24' dateTime={item.time}>{item.time}</time>
-                                                    <p className='fs-24'>{item.place}</p>
-                                                    <p className='fs-24'>{item.position}</p>
+                                                    <time className='time' dateTime={item.time}>{item.time}</time>
+                                                    <p className='text-place'>{item.place}</p>
+                                                    <p className='text-position'>{item.position}</p>
                                                 </div>
                                             </div>
                                         ))

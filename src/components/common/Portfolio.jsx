@@ -11,7 +11,7 @@ function Portfolio ({userData,activeTab}) {
 
   return(
     <>
-      <section id="portfolio" className="portfolio my-24">
+      <section id="portfolio" className="portfolio py-24">
         <div className="container">
           <div className="row">
             <div className="col">
