@@ -304,7 +304,7 @@ function IndexMainIntro() {
                                     </div>
                                     {/* Tab 選單區 */}
                                         <Nav className="nav-item-box">
-                                            <a href="https://drive.google.com/file/d/1A-_f1RUlJzVmEvMZZ7e0Q6gStoEjDm3G/view" 
+                                            <a href="https://drive.google.com/file/d/1K9QXa0rN8gQHbAAoD-kJRWy4gmwM8ha_/view" 
                                                 className=' py-8 px-24
                                                             d-flex justify-content-center align-items-center
                                                             resume-link'
