@@ -1,7 +1,7 @@
 import { createHashRouter } from "react-router-dom";
-import Index from "../pages";
 import FrontLayout from "../layouts/FrontLayout";
-import Portfolio02 from "../components/common/Portfolio02";
+import Index from "../pages/Index/Index";
+import PortfolioDetail from "../pages/PortfolioDetail/PortfolioDetail";
 
 const router = createHashRouter([ //createHashRouter為建立router的方法
 	{
@@ -14,8 +14,10 @@ const router = createHashRouter([ //createHashRouter為建立router的方法
             },
             {
                 path: "Portfolio/:id_portfolio",
-                element: <Portfolio02 />,
+                element: <PortfolioDetail />,
             },
+
+            
         ]
 	}
 ])

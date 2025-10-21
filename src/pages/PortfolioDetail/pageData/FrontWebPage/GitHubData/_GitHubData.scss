@@ -1,0 +1,29 @@
+
+
+.GitHubData{
+    background-color: rgb(219, 219, 219);
+    padding: 20px 0 20px 0;
+    border-radius: 12px;
+    .title-box{
+        padding: 12px 0;
+    }
+    .link-box{
+        padding-bottom: 12px;
+        .link-set{
+            color: #000000;
+            
+        }
+    }
+    .img-box{
+        padding: 0 60px 0 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .img-set{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+}

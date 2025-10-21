@@ -1,0 +1,322 @@
+
+
+
+.NewExperience-bg{
+
+    .experienceContent-box{
+        width: 100%;
+        display: flex;
+        min-height: 380px;
+        .firstItem{
+            flex: 0 0 auto; 
+            background-color: transparent;
+            position: relative;
+            width: 100px;
+
+            .itemBox{
+                position: absolute;
+                left: 0%;
+                bottom: 0%;
+                background-color: transparent;
+                width: 100%;
+                height: 250px;
+
+                .firstTextSet{
+                    position: absolute;
+                    left: 50%;
+                    top: 0%;
+                    transform: translate(-50%,-50%);
+                    background-color: rgb(112, 150, 205);
+                    word-break: keep-all; 
+                    padding: 12px;
+                    border-radius: 8px;
+                    z-index: 10;
+                    color: #ffffff;
+                }
+
+                .firstBigCircle{
+                    position: absolute;
+                    left: 50%;
+                    top: calc(0% + 60px);
+                    background-color: #ffffff;
+                    width: 50px;
+                    height: 50px;
+                    border: 5px solid rgb(112, 150, 205);
+                    border-radius: 50%;
+                    transform: translate(-50%,-50%);
+                    overflow: hidden;
+                    z-index: 10;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .firstBigCircleIn{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        background-color: rgb(112, 150, 205);
+                    }
+                }
+
+                .firstXLine{
+                    width: 10px;
+                    height: 70%;
+                    background-color: rgb(112, 150, 205);
+                    position: absolute;
+                    left: 50%;
+                    top:57%;
+                    transform: translate(-50%,-50%);
+                    z-index: 9;
+                }
+
+                .firstLittleCircle{
+                    position: absolute;
+                    left: 50%;
+                    top: calc(100% - 25px);
+                    background-color: rgb(112, 150, 205);
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    transform: translate(-50%,-50%);
+                    z-index: 10;
+                }
+
+                .firstYLine{
+                    width: 50%;
+                    height: 5px;
+                    background-color: #bfdbfe;
+                    position: absolute;
+                    left: 50%;
+                    top:calc(100% - 25px);
+                    transform: translateY(-50%);
+                    z-index: 9;
+                }
+            }
+            
+        }
+
+        .card-item-box{
+            
+            justify-content: center;
+            align-items: end;
+            .card-item{
+
+                .card-box{
+
+                    padding: 20px 10px 0px 10px;
+                    background-color: #ffffff;
+                    .card-bg{
+                        padding: 20px 12px;
+                        background-color: #bfdbfe;
+                        border-radius: 12px;
+                        width: 100%;
+                        min-height: 310px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 12px;
+                        .card-tag{
+
+                            .tag-set{
+
+                                font-size: 20px;
+                            }
+                        }
+
+                        .img-box{
+                            
+                            width: 100%;
+                            .img-set{
+                                width: 100%;
+                                height: auto;
+                                aspect-ratio: 600 / 375;
+                                object-fit: cover;
+                                border-radius: 8px;
+                            }
+                        }
+
+                        .card-title{
+                            width: 100%;
+                            min-height: 60px;
+                            text-align: center;
+                            .title-set{
+
+                                font-size: 20px;
+                            }
+                        }
+
+                        .card-btn-set{
+                            border: none;
+                            padding: 12px 20px;
+                            background-color:rgb(97, 125, 198);
+                            border-radius: 8px;
+                            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+                            text-decoration: none;
+                            .btn-text-set{
+                                color: #ffffff;
+                            }
+                        }
+                    }
+
+                    
+                }
+                
+                .bottomSpace{
+                    position: relative;
+                    height: 50px;
+                    background-color: transparent;
+
+                    .line{
+                        position: absolute;
+                        left: 0%;
+                        top: 50%;
+                        background-color: #bfdbfe;
+                        width: 100%;
+                        height: 5px;
+                        transform: translateY(-50%);
+                    }
+
+                    .circle{
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        background-color: #bfdbfe;
+                        width: 20PX;
+                        height: 20px;
+                        border-radius: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+        }
+        
+        .card-item-mg-box{
+            width: calc(100% - 100px);
+            //輪播本體
+            .swiper{
+
+                .card-item{
+                    min-height: 200px;
+                    .card-box{
+
+                        padding: 20px 10px 0px 10px;
+                        background-color: #ffffff;
+                        .card-bg{
+                            padding: 20px 12px;
+                            background-color: #bfdbfe;
+                            border-radius: 12px;
+                            width: 100%;
+                            min-height: 310px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 12px;
+                            .card-tag{
+
+                                .tag-set{
+
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .img-box{
+                                
+                                width: 100%;
+                                .img-set{
+                                    width: 100%;
+                                    height: auto;
+                                    aspect-ratio: 600 / 375;
+                                    object-fit: cover;
+                                    border-radius: 8px;
+                                }
+                            }
+
+                            .card-title{
+                                width: 100%;
+                                min-height: 60px;
+                                text-align: center;
+                                .title-set{
+
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .card-btn-set{
+                                border: none;
+                                padding: 12px 20px;
+                                background-color:rgb(97, 125, 198);
+                                border-radius: 8px;
+                                box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+                                text-decoration: none;
+                                .btn-text-set{
+                                    color: #ffffff;
+                                }
+                            }
+                        }
+
+                        
+                    }
+                    
+                    .bottomSpace{
+                        position: relative;
+                        height: 50px;
+                        background-color: transparent;
+
+                        .line{
+                            position: absolute;
+                            left: 0%;
+                            top: 50%;
+                            background-color: #bfdbfe;
+                            width: 100%;
+                            height: 5px;
+                            transform: translateY(-50%);
+                        }
+
+                        .circle{
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            background-color: #bfdbfe;
+                            width: 20PX;
+                            height: 20px;
+                            border-radius: 50%;
+                            transform: translate(-50%,-50%);
+                        }
+                    }
+                }
+            }
+            
+            //左右頁按鈕
+            .swiper-button-prev,
+            .swiper-button-next {
+                position: absolute;
+                top: 75%;
+                transform: translateY(-50%);
+                width: 50px;
+                height: 50px;
+                background-color: #ffffff;
+                color:#0068ff ;
+                border-radius: 50%;
+                z-index: 10;
+                &:hover{
+                    background-color: #0068ff;
+                    color:#ffffff ;
+                }
+                @media (max-width: 576px) {
+                    width: 30px;
+                    height: 30px;
+                    top: 64%;
+                }
+            }
+
+            .swiper-button-prev {
+                left: 20px;
+            }
+
+            .swiper-button-next {
+                right: 20px;
+            }
+        }
+    }
+}

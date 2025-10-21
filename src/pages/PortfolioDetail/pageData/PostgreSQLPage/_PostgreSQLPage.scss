@@ -1,0 +1,30 @@
+
+.PostgreSQLPage{
+    background-color: rgb(219, 219, 219);
+    padding: 20px 12px;
+    border-radius: 12px;
+    .title-box{
+        padding-bottom: 12px;
+        .title-set{
+
+        }
+    }
+
+    .text-box{
+        padding-bottom: 12px;
+        .text-set{
+
+
+        }
+    }
+
+    .img-box{
+
+        .img-set{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+}

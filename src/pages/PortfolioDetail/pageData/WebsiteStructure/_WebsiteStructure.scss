@@ -1,0 +1,40 @@
+
+
+.WebsiteStructure{
+
+    .structureImg-box{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .img-set{
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 12px;
+             @media (max-width: 992px) { 
+                width: 100%;
+            }
+        }
+        
+    }
+
+    .content-box{
+
+        .title-box{
+
+            .title-set{
+                
+            }
+        }
+
+        .text-box{
+
+            .text-set{
+
+
+            }
+        }
+    }
+}
