@@ -819,7 +819,7 @@ export const ContextProvider = ({ children }) => {
                     {
                         tag:"WEB",
                         projectType:"團隊專案",
-                        title:"ComeBuyTeamWork",
+                        title:"ComeBuy",
                         img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/web-img06-02.png`,
                         textContent:[
                             {
