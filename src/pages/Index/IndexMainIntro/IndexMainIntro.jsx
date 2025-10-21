@@ -10,7 +10,7 @@ import Experience from '../../../components/common/Experience/Experience';
 
 function IndexMainIntro() {
 
-    const [activeTab, setActiveTab] = useState('作品集');
+    const [activeTab, setActiveTab] = useState('經歷');
 
     const userData = {
         name:"余亮言",
