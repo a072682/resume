@@ -51,7 +51,7 @@ function LayoutSkills() {
     //#region LayoutSkills頁面圖片狀態宣告
         const[layoutSkillsPageImg,setLayoutSkillsPageImg]=useState(null);
         useEffect(()=>{
-            console.log("Layout圖片資料:",layoutSkillsPageImg);
+            // console.log("Layout圖片資料:",layoutSkillsPageImg);
         },[layoutSkillsPageImg]);
     //#endregion
 

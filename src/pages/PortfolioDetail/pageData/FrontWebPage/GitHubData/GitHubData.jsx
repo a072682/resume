@@ -37,7 +37,7 @@ function GitHubData() {
     //#region GitHubData頁面圖片狀態宣告
         const[gitHubDataPageImg,setGitHubDataPageImg]=useState(null);
         useEffect(()=>{
-            console.log("git圖片資料:",gitHubDataPageImg);
+            // console.log("git圖片資料:",gitHubDataPageImg);
         },[gitHubDataPageImg]);
     //#endregion
 

@@ -46,18 +46,18 @@ const [experienceActiveTab, setExperienceActiveTab] = useState('目前經歷');/
                                         {
                                             tabdata?.map((item)=>{
                                                 return(
-                                                    <>
-                                                        <Nav.Item key={item.key} className='tab-item'>
-                                                            <Nav.Link   className={`
-                                                                                    tab-link
-                                                                                    ${item.disabled ? 'is-disabled' : ''}
-                                                                                  `} 
-                                                                        aria-disabled={item.disabled} 
-                                                                        eventKey={item.key}>
-                                                                {item.title}
-                                                            </Nav.Link>
-                                                        </Nav.Item>
-                                                    </>
+                                                    
+                                                    <Nav.Item key={item.key} className='tab-item'>
+                                                        <Nav.Link   className={`
+                                                                                tab-link
+                                                                                ${item.disabled ? 'is-disabled' : ''}
+                                                                                `} 
+                                                                    aria-disabled={item.disabled} 
+                                                                    eventKey={item.key}>
+                                                            {item.title}
+                                                        </Nav.Link>
+                                                    </Nav.Item>
+                                                    
                                                 )
                                             })
                                         }
@@ -67,11 +67,11 @@ const [experienceActiveTab, setExperienceActiveTab] = useState('目前經歷');/
                                         {
                                             tabdata?.map((item)=>{
                                                 return(
-                                                    <>
-                                                        <Tab.Pane key={item.key} eventKey={item.key}>
-                                                            {item.pageData}
-                                                        </Tab.Pane>
-                                                    </>
+                                                    
+                                                    <Tab.Pane key={item.key} eventKey={item.key}>
+                                                        {item.pageData}
+                                                    </Tab.Pane>
+                                                    
                                                 )
                                             })
                                         }

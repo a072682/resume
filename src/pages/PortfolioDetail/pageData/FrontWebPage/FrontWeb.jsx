@@ -100,7 +100,7 @@ function FrontWeb() {
                                             <Dropdown.Toggle as="div" onClick={() => {setShow(!show);}}> 
                                                 <span className='title-dropdown' >
                                                     {selectedValue}
-                                                    <span class="material-symbols-outlined">
+                                                    <span className="material-symbols-outlined">
                                                         keyboard_arrow_down
                                                     </span>
                                                 </span>

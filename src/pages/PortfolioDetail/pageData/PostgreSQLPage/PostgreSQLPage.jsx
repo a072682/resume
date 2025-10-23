@@ -10,7 +10,7 @@ function PostgreSQLPage() {
 
     //#region 取得id
         const { id_portfolio } = useParams();
-        useEffect(()=>{console.log("id:",id_portfolio)},[id_portfolio]);
+        useEffect(()=>{},[id_portfolio]);
     //#endregion
 
     //#region 解構userData

@@ -38,7 +38,7 @@ function RWDData() {
     //#region RWDData頁面圖片狀態宣告
         const[RWDDataPageImg,setRWDDataPageImg]=useState(null);
         useEffect(()=>{
-            console.log("rwd圖片資料:",RWDDataPageImg);
+            
         },[RWDDataPageImg]);
     //#endregion
 

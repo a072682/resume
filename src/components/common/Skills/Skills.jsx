@@ -19,24 +19,24 @@ function Skills({userData,activeTab}){
             {
               userData.navItem.find(item => item.title === activeTab).Skills.map((item) => {
                 return(
-                  <>
-                    <div key={item.title} className="col-12 col-lg-3">
-                      <div className="skill-group1 mt-12 px-12">
-                        <h3 className="skill-title">{item.title}</h3>
-                        <ul className="skill-list my-12">
-                          {
-                            item.item.map((itemIn)=>{
-                              return(
-                                <>
-                                  <li key={itemIn}>{itemIn}</li>
-                                </>
-                              )
-                            })
-                          }
-                        </ul>
-                      </div>
+                  
+                  <div key={item.title} className="col-12 col-lg-3">
+                    <div className="skill-group1 mt-12 px-12">
+                      <h3 className="skill-title">{item.title}</h3>
+                      <ul className="skill-list my-12">
+                        {
+                          item.item.map((itemIn)=>{
+                            return(
+                              
+                              <li key={itemIn}>{itemIn}</li>
+                              
+                            )
+                          })
+                        }
+                      </ul>
                     </div>
-                  </>
+                  </div>
+                  
                 )
               })
             }

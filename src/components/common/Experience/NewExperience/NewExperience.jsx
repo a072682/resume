@@ -24,7 +24,7 @@ function NewExperience (){
     //#endregion
 
     //#region 更新userData資料
-        useEffect(()=>{console.log("新經歷資料:",userData)});
+        useEffect(()=>{});
     //#endregion
 
     return(

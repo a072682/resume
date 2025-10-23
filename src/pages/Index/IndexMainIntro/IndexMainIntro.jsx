@@ -319,9 +319,9 @@ function IndexMainIntro() {
                                                 查看履歷
                                             </a>
                                             {
-                                                userData.navItem.map((item)=>{
+                                                userData.navItem.map((item,index)=>{
                                                     return(
-                                                        <Nav.Item key={item.title}>
+                                                        <Nav.Item key={index}>
                                                             <Nav.Link className="my-tab-btn" eventKey={item.title}>{item.title}</Nav.Link>
                                                         </Nav.Item>
                                                     )
@@ -339,9 +339,9 @@ function IndexMainIntro() {
                 <div className='main-content-box'>       
                     <Tab.Content>
                         {
-                            userData.navItem.map((item) => {
+                            userData.navItem.map((item,index) => {
                                 return (
-                                <Tab.Pane key={item.title} eventKey={item.title}>
+                                <Tab.Pane key={index} eventKey={item.title}>
                                     <AnimatePresence mode="wait">
                                     {activeTab === item.title && (
                                         <motion.div
