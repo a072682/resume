@@ -14,7 +14,8 @@ function IndexMainIntro() {
 
     const userData = {
         name:"余亮言",
-        img:`${import.meta.env.BASE_URL}images/desktop/USER-ID.jpg`,
+        img:`${import.meta.env.BASE_URL}images/desktop/USER-ID.png`,
+        imgSm:`${import.meta.env.BASE_URL}images/desktop/USER-ID-sm.png`,
         englishName:"Andy Yu",
         phone:"0968630133",
         email:"a072682@gmail.com",
@@ -275,7 +276,10 @@ function IndexMainIntro() {
                                 <div className='main-intro-bg1 d-flex justify-content-center align-items-center'>
                                     <div className='img-box'>
                                         <div className='box1 d-flex justify-content-center align-items-center'> 
-                                            <img className='box2' src={userData.img} alt="" />
+                                            <picture>
+                                                <source media="(max-width: 576px)" srcSet={userData.imgSm} />
+                                                <img className="box2" src={userData.img} alt="頭像圖片" />
+                                            </picture>
                                         </div>
                                     </div>
                                 </div>

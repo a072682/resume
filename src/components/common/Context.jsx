@@ -24,7 +24,8 @@ const ContextData = createContext();
 export const ContextProvider = ({ children }) => {
   const userData = {
         name:"余亮言",
-        img:`${import.meta.env.BASE_URL}images/desktop/USER-ID.jpg`,
+        img:`${import.meta.env.BASE_URL}images/desktop/USER-ID.png`,
+        imgSm:`${import.meta.env.BASE_URL}images/desktop/USER-ID-sm.png`,
         englishName:"Andy Yu",
         phone:"0968630133",
         email:"a072682@gmail.com",
