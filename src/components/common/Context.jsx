@@ -1,18 +1,18 @@
 import { createContext, useContext, useState } from "react";
-import WebsiteStructure from "../../pages/PortfolioDetail/pageData/WebsiteStructure/WebsiteStructure";
-import FrontWeb from "../../pages/PortfolioDetail/pageData/FrontWebPage/FrontWeb";
-import ServerPage from "../../pages/PortfolioDetail/pageData/ServerPage/ServerPage";
-import PostgreSQLPage from "../../pages/PortfolioDetail/pageData/PostgreSQLPage/PostgreSQLPage";
-import DemoPage from "../../pages/PortfolioDetail/pageData/DemoPage/DemoPage";
-import FrontWebStructure from "../../pages/PortfolioDetail/pageData/FrontWebPage/FrontWebStructure/FrontWebStructure";
-import FrontWebDetailStructure from "../../pages/PortfolioDetail/pageData/FrontWebPage/FrontWebDetailStructure/FrontWebDetailStructure";
-import LayoutSkills from "../../pages/PortfolioDetail/pageData/FrontWebPage/LayoutSkills/LayoutSkills";
-import ReactRouterDOM from "../../pages/PortfolioDetail/pageData/FrontWebPage/ReactRouterDOM/ReactRouterDOM";
-import AxiosData from "../../pages/PortfolioDetail/pageData/FrontWebPage/AxiosData/AxiosData";
-import RWDData from "../../pages/PortfolioDetail/pageData/FrontWebPage/RWDData/RWDData";
-import GitHubData from "../../pages/PortfolioDetail/pageData/FrontWebPage/GitHubData/GitHubData";
-import UserSide from "../../pages/PortfolioDetail/pageData/DemoPage/UserSide/UserSide";
-import ManagerSide from "../../pages/PortfolioDetail/pageData/DemoPage/ManagerSide/ManagerSide";
+import WebsiteStructure from "../../pages/作品介紹頁面/pageData/WebsiteStructure/WebsiteStructure";
+import FrontWeb from "../../pages/作品介紹頁面/pageData/FrontWebPage/FrontWeb";
+import ServerPage from "../../pages/作品介紹頁面/pageData/ServerPage/ServerPage";
+import PostgreSQLPage from "../../pages/作品介紹頁面/pageData/PostgreSQLPage/PostgreSQLPage";
+import DemoPage from "../../pages/作品介紹頁面/pageData/DemoPage/DemoPage";
+import FrontWebStructure from "../../pages/作品介紹頁面/pageData/FrontWebPage/FrontWebStructure/FrontWebStructure";
+import FrontWebDetailStructure from "../../pages/作品介紹頁面/pageData/FrontWebPage/FrontWebDetailStructure/FrontWebDetailStructure";
+import LayoutSkills from "../../pages/作品介紹頁面/pageData/FrontWebPage/LayoutSkills/LayoutSkills";
+import ReactRouterDOM from "../../pages/作品介紹頁面/pageData/FrontWebPage/ReactRouterDOM/ReactRouterDOM";
+import AxiosData from "../../pages/作品介紹頁面/pageData/FrontWebPage/AxiosData/AxiosData";
+import RWDData from "../../pages/作品介紹頁面/pageData/FrontWebPage/RWDData/RWDData";
+import GitHubData from "../../pages/作品介紹頁面/pageData/FrontWebPage/GitHubData/GitHubData";
+import UserSide from "../../pages/作品介紹頁面/pageData/DemoPage/UserSide/UserSide";
+import ManagerSide from "../../pages/作品介紹頁面/pageData/DemoPage/ManagerSide/ManagerSide";
 
 
 
@@ -24,8 +24,8 @@ const ContextData = createContext();
 export const ContextProvider = ({ children }) => {
   const userData = {
         name:"余亮言",
-        img:`${import.meta.env.BASE_URL}images/desktop/USER-ID.png`,
-        imgSm:`${import.meta.env.BASE_URL}images/desktop/USER-ID-sm.png`,
+        img:`images/desktop/USER-ID.png`,
+        imgSm:`images/desktop/USER-ID-sm.png`,
         englishName:"Andy Yu",
         phone:"0968630133",
         email:"a072682@gmail.com",
@@ -84,14 +84,14 @@ export const ContextProvider = ({ children }) => {
                         tag:"WEB",
                         projectType:"個人專案",
                         title:"Vivre旅遊資訊網頁",
-                        img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/web-img01-02.png`,
+                        img:`/images/作品集/Vivre旅遊資訊網頁/web-img01-02.png`,
                         detail:[
                             {
                                 title: "作品整體架構",
                                 key: "作品整體架構",
                                 pageData:<WebsiteStructure />,
                                 pageDetailData: {
-                                    pageImg: `${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/整體專案架構/整體專案架構圖.png`,
+                                    pageImg: `/images/作品集/Vivre旅遊資訊網頁/整體專案架構/整體專案架構圖.png`,
                                     detailData: [
                                         {
                                             sectionId: "frontend-site", 
@@ -133,7 +133,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:null,
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/前端架構/前端網站架構圖.png`,
+                                                    img:`/images/作品集/Vivre旅遊資訊網頁/前端架構/前端網站架構圖.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -148,7 +148,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:null,
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/專案架構/專案模組架構圖.png`,
+                                                    img:`/images/作品集/Vivre旅遊資訊網頁/專案架構/專案模組架構圖.png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -163,16 +163,16 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"本網站頁面以 HTML + SCSS 為基礎進行切版，採用模組化、響應式、語義化的設計原則，確保畫面在不同裝置上都能維持良好的排版與一致的視覺體驗。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/切版能力/01.png`,
+                                                    img:`/images/作品集/Vivre旅遊資訊網頁/切版能力/01.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/切版能力/02.png`,
+                                                    img:`/images/作品集/Vivre旅遊資訊網頁/切版能力/02.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/切版能力/03.png`,
+                                                    img:`/images/作品集/Vivre旅遊資訊網頁/切版能力/03.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/切版能力/04.png`,
+                                                    img:`/images/作品集/Vivre旅遊資訊網頁/切版能力/04.png`,
                                                 },
 
                                             ],
@@ -188,7 +188,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"專案採用 React Router DOM v6 進行頁面導向與資訊架構設計，將網站分為多個主題頁面（首頁、線上估價、新手指南、關於我們等），以提升可維護性與使用者體驗。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/路由系統/路由系統.png`,
+                                                    img:`/images/作品集/Vivre旅遊資訊網頁/路由系統/路由系統.png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -203,13 +203,13 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"本網站採用 RWD 響應式設計，確保在桌機、平板與手機等不同螢幕尺寸下皆能自適應顯示，維持一致的視覺體驗與操作邏輯。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/RWD/rwd01.png`,
+                                                    img:`/images/作品集/Vivre旅遊資訊網頁/RWD/rwd01.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/RWD/rwd02.png`,
+                                                    img:`/images/作品集/Vivre旅遊資訊網頁/RWD/rwd02.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/RWD/rwd03.png`,
+                                                    img:`/images/作品集/Vivre旅遊資訊網頁/RWD/rwd03.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -236,7 +236,7 @@ export const ContextProvider = ({ children }) => {
                                             DemoPageText:null,
                                             DemoPageImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/Vivre旅遊資訊網頁/web-img01-02.png`,
+                                                    img:`/images/作品集/Vivre旅遊資訊網頁/web-img01-02.png`,
                                                 },
                                             ],
                                             DemoPageGitHub:"https://github.com/a072682/HomeWork-Week-6",
@@ -258,15 +258,15 @@ export const ContextProvider = ({ children }) => {
                     {
                         tag:"WEB",
                         projectType:"個人專案",
-                        title:"LEARNING線上平台",
-                        img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/web-img02-02.png`,
+                        title:"LEARNING學習平台",
+                        img:`/images/作品集/LEARNING線上學習平台/web-img02-02.png`,
                         detail:[
                             {
                                 title: "作品整體架構",
                                 key: "作品整體架構",
                                 pageData:<WebsiteStructure />,
                                 pageDetailData: {
-                                    pageImg: `${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/整體專案架構/整體專案架構圖.png`,
+                                    pageImg: `/images/作品集/LEARNING線上學習平台/整體專案架構/整體專案架構圖.png`,
                                     detailData: [
                                         {
                                             sectionId: "frontend-site", 
@@ -308,7 +308,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:null,
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/前端架構/前端網站架構圖.png`,
+                                                    img:`/images/作品集/LEARNING線上學習平台/前端架構/前端網站架構圖.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -323,7 +323,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:null,
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/專案架構/專案模組架構圖.png`,
+                                                    img:`/images/作品集/LEARNING線上學習平台/專案架構/專案模組架構圖.png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -338,16 +338,16 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"本網站頁面以 HTML + SCSS 為基礎進行切版，採用模組化、響應式、語義化的設計原則，確保畫面在不同裝置上都能維持良好的排版與一致的視覺體驗。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/切版能力/01.png`,
+                                                    img:`/images/作品集/LEARNING線上學習平台/切版能力/01.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/切版能力/02.png`,
+                                                    img:`/images/作品集/LEARNING線上學習平台/切版能力/02.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/切版能力/03.png`,
+                                                    img:`/images/作品集/LEARNING線上學習平台/切版能力/03.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/切版能力/04.png`,
+                                                    img:`/images/作品集/LEARNING線上學習平台/切版能力/04.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -362,7 +362,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"專案採用 React Router DOM v6 進行頁面導向與資訊架構設計，將網站分為多個主題頁面（首頁、線上估價、新手指南、關於我們等），以提升可維護性與使用者體驗。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/路由系統/路由系統.png`,
+                                                    img:`/images/作品集/LEARNING線上學習平台/路由系統/路由系統.png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -377,13 +377,13 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"本網站採用 RWD 響應式設計，確保在桌機、平板與手機等不同螢幕尺寸下皆能自適應顯示，維持一致的視覺體驗與操作邏輯。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/RWD/rwd01.png`,
+                                                    img:`/images/作品集/LEARNING線上學習平台/RWD/rwd01.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/RWD/rwd02.png`,
+                                                    img:`/images/作品集/LEARNING線上學習平台/RWD/rwd02.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/RWD/rwd03.png`,
+                                                    img:`/images/作品集/LEARNING線上學習平台/RWD/rwd03.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -410,7 +410,7 @@ export const ContextProvider = ({ children }) => {
                                             DemoPageText:null,
                                             DemoPageImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/LEARNING線上學習平台/web-img02-02.png`,
+                                                    img:`/images/作品集/LEARNING線上學習平台/web-img02-02.png`,
                                                 },
                                             ],
                                             DemoPageGitHub:"https://github.com/a072682/HomeWork-Week-8",
@@ -433,14 +433,14 @@ export const ContextProvider = ({ children }) => {
                         tag:"WEB",
                         projectType:"個人專案",
                         title:"品牌形象網站",
-                        img:`${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/web-img03-02.png`,
+                        img:`/images/作品集/品牌形象網站/web-img03-02.png`,
                         detail:[
                             {
                                 title: "作品整體架構",
                                 key: "作品整體架構",
                                 pageData:<WebsiteStructure />,
                                 pageDetailData: {
-                                    pageImg: `${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/整體專案架構/整體專案架構圖.png`,
+                                    pageImg: `/images/作品集/品牌形象網站/整體專案架構/整體專案架構圖.png`,
                                     detailData: [
                                         {
                                             sectionId: "frontend-site", 
@@ -474,7 +474,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:null,
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/前端架構/前端網站架構圖.png`,
+                                                    img:`/images/作品集/品牌形象網站/前端架構/前端網站架構圖.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -489,7 +489,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:null,
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/專案架構/專案模組架構圖.png`,
+                                                    img:`/images/作品集/品牌形象網站/專案架構/專案模組架構圖.png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -504,13 +504,13 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"本網站頁面以 HTML + SCSS 為基礎進行切版，採用模組化、響應式、語義化的設計原則，確保畫面在不同裝置上都能維持良好的排版與一致的視覺體驗。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/切版能力/01.png`,
+                                                    img:`/images/作品集/品牌形象網站/切版能力/01.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/切版能力/02.png`,
+                                                    img:`/images/作品集/品牌形象網站/切版能力/02.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/切版能力/03.png`,
+                                                    img:`/images/作品集/品牌形象網站/切版能力/03.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -525,7 +525,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"專案採用 React Router DOM v6 進行頁面導向與資訊架構設計，將網站分為多個主題頁面（首頁、線上估價、新手指南、關於我們等），以提升可維護性與使用者體驗。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/路由系統/路由系統.png`,
+                                                    img:`/images/作品集/品牌形象網站/路由系統/路由系統.png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -540,13 +540,13 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"本網站採用 RWD 響應式設計，確保在桌機、平板與手機等不同螢幕尺寸下皆能自適應顯示，維持一致的視覺體驗與操作邏輯。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/RWD/rwd01.png`,
+                                                    img:`/images/作品集/品牌形象網站/RWD/rwd01.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/RWD/rwd02.png`,
+                                                    img:`/images/作品集/品牌形象網站/RWD/rwd02.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/RWD/rwd03.png`,
+                                                    img:`/images/作品集/品牌形象網站/RWD/rwd03.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -573,7 +573,7 @@ export const ContextProvider = ({ children }) => {
                                             DemoPageText:null,
                                             DemoPageImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/品牌形象網站/web-img03-02.png`,
+                                                    img:`/images/作品集/品牌形象網站/web-img03-02.png`,
                                                 },
                                             ],
                                             DemoPageGitHub:"https://github.com/a072682/2025ExperienceCampHomeWork02",
@@ -596,14 +596,14 @@ export const ContextProvider = ({ children }) => {
                         tag:"WEB",
                         projectType:"個人專案",
                         title:"服裝購物形象網站",
-                        img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/web-img04-02.png`,
+                        img:`/images/作品集/服裝購物形象網站/web-img04-02.png`,
                         detail:[
                             {
                                 title: "作品整體架構",
                                 key: "作品整體架構",
                                 pageData:<WebsiteStructure />,
                                 pageDetailData: {
-                                    pageImg: `${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/整體專案架構/整體專案架構圖.png`,
+                                    pageImg: `/images/作品集/服裝購物形象網站/整體專案架構/整體專案架構圖.png`,
                                     detailData: [
                                     {
                                         sectionId: "frontend-site", 
@@ -646,7 +646,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:null,
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/前端架構/前端網站架構圖.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/前端架構/前端網站架構圖.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -661,7 +661,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:null,
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/專案架構/專案模組架構圖.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/專案架構/專案模組架構圖.png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -676,16 +676,16 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"本網站頁面以 HTML + SCSS 為基礎進行切版，採用模組化、響應式、語義化的設計原則，確保畫面在不同裝置上都能維持良好的排版與一致的視覺體驗。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/切版能力/01.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/切版能力/01.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/切版能力/02.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/切版能力/02.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/切版能力/03.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/切版能力/03.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/切版能力/04.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/切版能力/04.png`,
                                                 },
 
                                             ],
@@ -701,7 +701,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"專案採用 React Router DOM v6 進行頁面導向與資訊架構設計，將網站分為多個主題頁面（首頁、線上估價、新手指南、關於我們等），以提升可維護性與使用者體驗。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/路由系統/路由系統.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/路由系統/路由系統.png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -716,7 +716,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"專案使用 Redux Toolkit 作為全域資料儲存中心，搭配 Axios 與後端 API 進行資料交換，確保使用者登入狀態、會員資料與訂單資訊在整個網站中一致且可追蹤。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/資料存處&AXIOS/Redux(資料存儲).png`,
+                                                    img:`/images/作品集/服裝購物形象網站/資料存處&AXIOS/Redux(資料存儲).png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -731,13 +731,13 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"本網站採用 RWD 響應式設計，確保在桌機、平板與手機等不同螢幕尺寸下皆能自適應顯示，維持一致的視覺體驗與操作邏輯。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/RWD/rwd01.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/RWD/rwd01.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/RWD/rwd02.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/RWD/rwd02.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/RWD/rwd03.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/RWD/rwd03.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -752,7 +752,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"專案採用 Git + GitHub 分支管理機制 進行版本控制與協作。每位開發者在自己的分支上開發功能，確認無誤後再合併至主分支，確保主線穩定與可隨時部署。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/GITHUB/GitHub專案流程.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/GITHUB/GitHub專案流程.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -779,7 +779,7 @@ export const ContextProvider = ({ children }) => {
                                             DemoPageText:null,
                                             DemoPageImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/web-img04.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/web-img04.png`,
                                                 },
                                             ],
                                             DemoPageGitHub:"https://github.com/a072682/ReactHomeWork-8-front",
@@ -796,7 +796,7 @@ export const ContextProvider = ({ children }) => {
                                             DemoPageText:"預設帳號:admin123@gmail.com/預設密碼:admin123",
                                             DemoPageImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/服裝購物形象網站/web-img05.png`,
+                                                    img:`/images/作品集/服裝購物形象網站/web-img05.png`,
                                                 },
                                             ],
                                             DemoPageGitHub:"https://github.com/a072682/ReactHomeWork-8-back",
@@ -820,12 +820,12 @@ export const ContextProvider = ({ children }) => {
                     {
                         tag:"WEB",
                         projectType:"團隊專案",
-                        title:"ComeBuy",
-                        img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/web-img06-02.png`,
+                        title:"ComeBuyTeamWork",
+                        img:`/images/作品集/ComeBuyTeamWork/web-img06-02.png`,
                         textContent:[
                             {
                             id:1,
-                            text:"這是一個服裝購物形象網站(後台)。",
+                            text:"這是一個半自動電商平台網站。",
                             },
                         ],
                         detail:[
@@ -834,7 +834,7 @@ export const ContextProvider = ({ children }) => {
                                 key: "作品整體架構",
                                 pageData:<WebsiteStructure />,
                                 pageDetailData: {
-                                    pageImg: `${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/整體專案架構/整體專案架構圖.png`,
+                                    pageImg: `/images/作品集/ComeBuyTeamWork/整體專案架構/整體專案架構圖.png`,
                                     detailData: [
                                     {
                                         sectionId: "frontend-site", 
@@ -888,7 +888,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:null,
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/前端架構/前端網站架構圖.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/前端架構/前端網站架構圖.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -903,7 +903,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:null,
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/專案架構/專案模組架構圖.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/專案架構/專案模組架構圖.png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -918,34 +918,34 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"本網站頁面以 HTML + SCSS 為基礎進行切版，採用模組化、響應式、語義化的設計原則，確保畫面在不同裝置上都能維持良好的排版與一致的視覺體驗。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/切版能力/01.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/切版能力/01.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/切版能力/02.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/切版能力/02.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/切版能力/03.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/切版能力/03.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/切版能力/04.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/切版能力/04.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/切版能力/05.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/切版能力/05.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/切版能力/06.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/切版能力/06.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/切版能力/07.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/切版能力/07.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/切版能力/08.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/切版能力/08.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/切版能力/09.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/切版能力/09.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/切版能力/10.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/切版能力/10.png`,
                                                 },
 
                                             ],
@@ -961,7 +961,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"專案採用 React Router DOM v6 進行頁面導向與資訊架構設計，將網站分為多個主題頁面（首頁、線上估價、新手指南、關於我們等），以提升可維護性與使用者體驗。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/路由系統/路由系統.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/路由系統/路由系統.png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -976,7 +976,7 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"專案使用 Redux Toolkit 作為全域資料儲存中心，搭配 Axios 與後端 API 進行資料交換，確保使用者登入狀態、會員資料與訂單資訊在整個網站中一致且可追蹤。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/資料存處&AXIOS/Redux(資料存儲).png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/資料存處&AXIOS/Redux(資料存儲).png`,
                                                 }
                                             ],
                                             disabled: false,
@@ -991,13 +991,13 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"本網站採用 RWD 響應式設計，確保在桌機、平板與手機等不同螢幕尺寸下皆能自適應顯示，維持一致的視覺體驗與操作邏輯。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/RWD/rwd01.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/RWD/rwd01.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/RWD/rwd02.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/RWD/rwd02.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/RWD/rwd03.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/RWD/rwd03.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -1012,10 +1012,10 @@ export const ContextProvider = ({ children }) => {
                                             frontWebPageText:"專案採用 Git + GitHub 分支管理機制 進行版本控制與協作。每位開發者在自己的分支上開發功能，確認無誤後再合併至主分支，確保主線穩定與可隨時部署。",
                                             frontWebImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/GITHUB/GitHub專案流程.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/GITHUB/GitHub專案流程.png`,
                                                 },
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/GITHUB/01.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/GITHUB/01.png`,
                                                 },
                                             ],
                                             disabled: false,
@@ -1034,7 +1034,7 @@ export const ContextProvider = ({ children }) => {
                                 pageDataText:"此伺服器以 Node.js + Express 為基礎，採用模組化架構設計，將各功能依職責劃分層次。每一層都負責特定任務，讓專案在維護、除錯與擴充上更有彈性與可讀性。",
                                 pageDataImg:[
                                     {
-                                        img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/伺服器端/Server.png`,
+                                        img:`/images/作品集/ComeBuyTeamWork/伺服器端/Server.png`,
                                     },
                                 ],
                                 disabled: false,
@@ -1049,7 +1049,7 @@ export const ContextProvider = ({ children }) => {
                                 pageDataText:"本系統以 PostgreSQL 為主要資料庫，採用關聯式設計，將使用者、訂單、購物車、訊息與會員資料清楚拆分。各資料表透過外鍵（Foreign Key）建立關聯，確保資料一致性並方便擴充查詢。",
                                 pageDataImg:[
                                     {
-                                        img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/資料庫端/資料庫.png`,
+                                        img:`/images/作品集/ComeBuyTeamWork/資料庫端/資料庫.png`,
                                     },
                                 ],
                                 disabled: false,
@@ -1072,7 +1072,7 @@ export const ContextProvider = ({ children }) => {
                                             DemoPageText:null,
                                             DemoPageImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/01.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/01.png`,
                                                 },
                                             ],
                                             DemoPageGitHub:"https://github.com/a072682/Come-Buy-team-work",
@@ -1089,7 +1089,7 @@ export const ContextProvider = ({ children }) => {
                                             DemoPageText:"預設帳號:admin123@gmail.com/預設密碼:admin123",
                                             DemoPageImg:[
                                                 {
-                                                    img:`${import.meta.env.BASE_URL}images/desktop/作品/ComeBuyTeamWork/管理者端頁面.png`,
+                                                    img:`/images/作品集/ComeBuyTeamWork/管理者端頁面.png`,
                                                 },
                                             ],
                                             DemoPageGitHub:"https://github.com/a072682/Come-Buy-Back-team-work",
@@ -1109,6 +1109,199 @@ export const ContextProvider = ({ children }) => {
                         ],
                         gitHub:"https://github.com/a072682/ReactHomeWork-8-back",
                         demo:"https://a072682.github.io/ReactHomeWork-8-back/",
+                    },
+                    {
+                        tag:"WEB",
+                        projectType:"個人專案",
+                        title:"異環技術複現網站",
+                        img:`/images/作品集/異環技術複現網站/預覽畫面.png`,
+                        textContent:[
+                            {
+                            id:1,
+                            text:"異環遊戲官方網站技術複製重現網站",
+                            },
+                        ],
+                        detail:[
+                            {
+                                title: "作品整體架構",
+                                key: "作品整體架構",
+                                pageData:<WebsiteStructure />,
+                                pageDetailData: {
+                                    pageImg: `/images/作品集/異環技術複現網站/作品整體架構/整體專案架構/整體專案架構圖.png`,
+                                    detailData: [
+                                    {
+                                        sectionId: "frontend-site", 
+                                        pageTitleContent: ["前端網站", "使用者/管理者端"],
+                                        pageTextContent: [
+                                            { id: "frontend-site-text-01", content: "技術：HTML、CSS/SCSS、JavaScript (ES6+)、React、Vite" },
+                                            { id: "frontend-site-text-02", content: "功能：建立互動式介面、路由分頁、表單驗證、資料顯示與操作" },
+                                            { id: "frontend-site-text-03", content: "資料交換格式：JSON" },
+                                            { id: "frontend-site-text-04", content: "角色：同時提供 使用者端（操作網站）與 管理者端" }
+                                        ]
+                                    },
+                                    {
+                                        sectionId: "server",
+                                        pageTitleContent: ["伺服器端"],
+                                        pageTextContent: [
+                                            { id: "server-text-01", content: "技術：Node.js（執行環境）、Express（API 框架）" },
+                                            { id: "server-text-02", content: "工具：Render（雲端部署）" },
+                                            { id: "server-text-03", content: "功能：處理前端請求、驗證資料、存取資料庫、回傳結果" },
+                                            { id: "server-text-04", content: "角色：同時提供 使用者端（操作網站）與 管理者端" }
+                                        ]
+                                    },
+                                    {
+                                        sectionId: "database",
+                                        pageTitleContent: ["資料庫端"],
+                                        pageTextContent: [
+                                            { id: "database-text-01", content: "技術：PostgreSQL（主資料庫）" },
+                                            { id: "database-text-02", content: "工具：DBeaver（可視化管理工具）、Neon（資料庫託管）" },
+                                            { id: "database-text-03", content: "功能：儲存會員、產品、訂單等核心資料，並進行查詢與分析" },
+                                            { id: "database-text-04", content: "特點：具備資料約束（Unique、FK）、索引與觸發器，保證資料一致性" }
+                                        ]
+                                    }
+                                    ]
+                                },
+                                disabled: false
+                            },
+                            {
+                                title: "前端介紹",
+                                key: "前端介紹",
+                                pageData:<FrontWeb />,
+                                pageDetailData: {
+                                    pageImg: null,
+                                    detailData: null,
+                                    tabData:[
+                                        {
+                                            title:"前端架構",
+                                            key:"前端架構",
+                                            frontWebPageData:<FrontWebStructure />,
+                                            frontWebPageTitle:null,
+                                            frontWebPageLink:null,
+                                            frontWebPageLinkName:null,
+                                            frontWebPageText:null,
+                                            frontWebImg:[
+                                                {
+                                                    img:`/images/作品集/異環技術複現網站/前端介紹/前端架構/前端網站架構圖.png`,
+                                                },
+                                            ],
+                                            disabled: false,
+                                        },
+                                        {
+                                            title:"切版能力",
+                                            key:"切版能力",
+                                            frontWebPageData:<LayoutSkills />,
+                                            frontWebPageTitle:"切版設計稿",
+                                            frontWebPageLink:null,
+                                            frontWebPageLinkName:null,
+                                            frontWebPageText:"本網站頁面以 HTML + SCSS 為基礎進行切版，採用模組化、響應式、語義化的設計原則，確保畫面在不同裝置上都能維持良好的排版與一致的視覺體驗。",
+                                            frontWebImg:[
+                                                {
+                                                    img:`/images/作品集/異環技術複現網站/前端介紹/切版能力/01.png`,
+                                                },
+                                                {
+                                                    img:`/images/作品集/異環技術複現網站/前端介紹/切版能力/02.png`,
+                                                },
+                                                {
+                                                    img:`/images/作品集/異環技術複現網站/前端介紹/切版能力/03.png`,
+                                                },
+                                                {
+                                                    img:`/images/作品集/異環技術複現網站/前端介紹/切版能力/04.png`,
+                                                },
+                                                {
+                                                    img:`/images/作品集/異環技術複現網站/前端介紹/切版能力/05.png`,
+                                                },
+                                            ],
+                                            disabled: false,
+                                        },
+                                    ],
+                                },
+                                disabled: false
+                            },
+                            {
+                                title:"伺服器端介紹",
+                                key:"伺服器端介紹",
+                                pageData:<ServerPage />,
+                                pageDataTitle:"Server 架構說明（Express.js + PostgreSQL）",
+                                pageDataLink:null,
+                                pageDataLinkName:null,
+                                pageDataText:"此伺服器以 Node.js + Express 為基礎，採用模組化架構設計，將各功能依職責劃分層次。每一層都負責特定任務，讓專案在維護、除錯與擴充上更有彈性與可讀性。",
+                                pageDataImg:[
+                                    {
+                                        img:`/images/作品集/異環技術複現網站/伺服器端/Server.png`,
+                                    },
+                                ],
+                                disabled: false,
+                            },
+                            {
+                                title:"資料庫端介紹",
+                                key:"資料庫端介紹",
+                                pageData:<PostgreSQLPage />,
+                                pageDataTitle:"資料庫結構說明（PostgreSQL）",
+                                pageDataLink:null,
+                                pageDataLinkName:null,
+                                pageDataText:"本系統以 PostgreSQL 為主要資料庫，採用關聯式設計，將使用者、訂單、購物車、訊息與會員資料清楚拆分。各資料表透過外鍵（Foreign Key）建立關聯，確保資料一致性並方便擴充查詢。",
+                                pageDataImg:[
+                                    {
+                                        img:`/images/作品集/異環技術複現網站/資料庫端/資料庫.png`,
+                                    },
+                                ],
+                                disabled: false,
+                            },
+                            {
+                                title:"Demo",
+                                key:"Demo",
+                                pageData:<DemoPage />,
+                                pageDetailData: {
+                                    pageImg: null,
+                                    detailData: null,
+                                    tabData:[
+                                        {
+                                            title:"使用者端",
+                                            key:"使用者端",
+                                            DemoPage:<UserSide />,
+                                            DemoPageTitle:"異環複現網站-使用者端",
+                                            DemoPageLink:null,
+                                            DemoPageLinkName:null,
+                                            DemoPageText:null,
+                                            DemoPageImg:[
+                                                {
+                                                    img:`/images/作品集/異環技術複現網站/demo/異環技術複現網站-使用者端.png`,
+                                                },
+                                            ],
+                                            DemoPageGitHub:"https://github.com/a072682/NevernessToEvernessFront",
+                                            DemoPageDemo:"https://neverness-to-everness-test.vercel.app/",
+                                            disabled: false,
+                                        },
+                                        {
+                                            title:"管理者端(後台)",
+                                            key:"管理者端(後台)",
+                                            DemoPage:<ManagerSide />,
+                                            DemoPageTitle:"異環複現網站(後台)",
+                                            DemoPageLink:null,
+                                            DemoPageLinkName:null,
+                                            DemoPageText:"預設帳號:admin01/預設密碼:admin01",
+                                            DemoPageImg:[
+                                                {
+                                                    img:`/images/作品集/異環技術複現網站/demo/異環技術複現網站-後台.png`,
+                                                },
+                                            ],
+                                            DemoPageGitHub:"https://github.com/a072682/NevernessToEvernessBack",
+                                            DemoPageDemo:"https://neverness-to-everness-back.vercel.app/",
+                                            disabled: false,
+                                        },
+                                    ],
+                                },
+                                disabled: false,
+                            },
+                            {
+                                title:"返回目錄",
+                                key:"返回目錄",
+                                pageData:"",
+                                disabled: false,
+                            },
+                        ],
+                        gitHub:"https://github.com/a072682/NevernessToEvernessFront",
+                        demo:"https://neverness-to-everness-test.vercel.app/",
                     },
                 ]
             },

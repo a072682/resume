@@ -1,0 +1,188 @@
+
+// 元件最外圍
+.首頁頁面{
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    // 背景
+    .首頁頁面-bg{
+        width: 71%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #bfdbfe;
+        z-index: 1;
+        border-radius: 100px 0 0 100px;
+        @media (max-width: 992px) {
+            width: 100%;
+            height: 23%;
+            border-radius: 0 0 0 100px;
+        }
+        @media (max-width: 768px) {
+            height: 20%;
+        }
+        @media (max-width: 417px) { 
+            height: 16%;
+        }
+    }
+    // 背景
+
+    //內容區塊
+    .首頁頁面-content{
+        padding: 48px 0;
+        width: 100%;
+        margin: 0 auto;
+        background-color: #eff6ff;
+        position: relative;
+        z-index: 2;
+        // 頭貼區塊設定
+        .AvatarImgBox{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 5;
+            // 頭貼設定
+            .imgBox{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .box1
+                {
+                    width: 65%;
+                    height: auto;
+                    aspect-ratio: 1 / 1;
+                    background-color: #ffffff;
+                    border-radius: 50%;
+                    border: 5px solid rgb(112, 150, 205);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @media (max-width: 992px) {
+                        width: 30%;
+                    }
+                    .box2{
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: 1 / 1;
+                        object-fit: cover;
+                        border-radius: 50%;
+                    }
+                }
+
+            }
+            // 頭貼設定
+        }
+        // 頭貼區塊設定
+
+        //內容區塊
+        .contentBox{
+            height: auto;
+            position: relative;
+            z-index: 5;
+            // 姓名區塊
+            .nameBox{
+                display: flex;
+                flex-direction: row;
+                @media (max-width: 992px) { 
+                    flex-direction: column;
+                }
+                .nameSet{
+                    font-size: 48px;
+                    color: rgb(54, 122, 218);
+                    @media (max-width: 992px) { 
+                        font-size: 40px;
+                    }
+                }
+            }
+            // 姓名區塊
+
+            //聯絡消息區塊
+            .contactBox{
+
+                // 電話設定
+                .phoneBox{
+
+                }
+                // 電話設定
+
+                // 信箱設定
+                .mailBox{
+
+                }
+                // 信箱設定
+            }
+            //聯絡消息區塊
+
+            //選單區
+            .itemBox{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap:12px;
+                // 履歷連結設定
+                .resumeLinkSet{
+                    width: 100%;
+                    color: rgb(112, 150, 205);
+                    background-color: white;
+                    border-radius: 12px;
+                    padding: 8px 24px;
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &.active {
+                        color: white;
+                        background-color: rgb(112, 150, 205);
+                    }
+
+                    &:hover {
+                        color: white;
+                        background-color: rgb(112, 150, 205);
+                    }
+                }
+                // 履歷連結設定
+
+                //連結設定
+                .itemBtnSet{
+                    width: 100%;
+                    color: rgb(112, 150, 205);
+                    background-color: white;
+                    padding: 8px 24px;
+                    font-size: 20px;
+                    border-radius: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+
+                    &.active {
+                        color: white;
+                        background-color: rgb(112, 150, 205);
+                    }
+
+                    &:hover {
+                        color: white;
+                        background-color: rgb(112, 150, 205);
+                    }
+                }
+                //連結設定
+            }
+            //選單區
+        }
+        //內容區塊
+    }
+    //內容區塊
+}
+// 元件最外圍
+
+
+
+
+
+
+
