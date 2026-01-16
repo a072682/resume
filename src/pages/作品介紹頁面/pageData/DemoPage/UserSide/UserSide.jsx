@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import './_UserSide.scss';
 import { useParams } from 'react-router-dom';
 import { useUserData } from '../../../../../components/common/Context';
+import { useSelector } from 'react-redux';
 
 
 function UserSide() {
@@ -13,11 +14,19 @@ function UserSide() {
         useEffect(()=>{},[id_portfolio]);
     //#endregion
 
+    //#region 取得框架資料
+    const frameData = useSelector((state)=>{
+        return(
+            state.data.data
+        )
+    })
+    //#endregion
+
     //#region 解構userData
         const { userData } = useUserData() ?? { userData: null };
         useEffect(()=>{
             handleUserSideData(userData);
-        },[userData])
+        },[frameData])
     //#endregion
 
     //#region UserSide頁面標題狀態宣告
@@ -61,20 +70,24 @@ function UserSide() {
                 if (navItem.title === "作品集") {
                     navItem.portfolio.map((itemIn) => {
                         if (itemIn.title === id_portfolio) {
-                            itemIn.detail.map((detailItem)=>{
-                                if(detailItem.key === "Demo"){
-                                    detailItem.pageDetailData.tabData.map((userSide)=>{
-                                        if(userSide.key === "使用者端"){
-                                            setUserSidePageTitle(userSide.DemoPageTitle);
-                                            setUserSidePageGitHub(userSide.DemoPageGitHub);
-                                            setUserSidePageDemoLink(userSide.DemoPageDemo);
-                                            userSide.DemoPageImg.map((userSideImg)=>{
-                                                setUserSidePageImg(userSideImg.img);
+                            itemIn.framework.map((workData)=>{
+                                if(workData.frameName === frameData){
+                                    workData.detail.map((detailItem)=>{
+                                        if(detailItem.key === "Demo"){
+                                            detailItem.pageDetailData.tabData.map((userSide)=>{
+                                                if(userSide.key === "使用者端"){
+                                                    setUserSidePageTitle(userSide.DemoPageTitle);
+                                                    setUserSidePageGitHub(userSide.DemoPageGitHub);
+                                                    setUserSidePageDemoLink(userSide.DemoPageDemo);
+                                                    userSide.DemoPageImg.map((userSideImg)=>{
+                                                        setUserSidePageImg(userSideImg.img);
+                                                    });
+                                                }
                                             });
                                         }
-                                    });
+                                    })
                                 }
-                            });
+                            })
                         }
                     });
                 }

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import './_ReactRouterDOM.scss';
 import { useEffect, useState } from 'react';
 import { useUserData } from '../../../../../components/common/Context';
+import { useSelector } from 'react-redux';
 
 
 function ReactRouterDOM() {
@@ -13,11 +14,23 @@ function ReactRouterDOM() {
         useEffect(()=>{},[id_portfolio]);
     //#endregion
 
+    //#region 取得框架資料
+        const frameData = useSelector((state)=>{
+            return(
+                state.data.data
+            )
+        })
+
+        useEffect(()=>{
+            //console.log("框架資料:",frameData);
+        },[frameData])
+    //#endregion
+
     //#region 解構userData
         const { userData } = useUserData() ?? { userData: null };
         useEffect(()=>{
             handleRouterDOMData(userData);
-        },[userData])
+        },[frameData])
     //#endregion
 
     //#region RouterDOM頁面標題狀態宣告
@@ -54,19 +67,23 @@ function ReactRouterDOM() {
                 if (navItem.title === "作品集") {
                     navItem.portfolio.map((itemIn) => {
                         if (itemIn.title === id_portfolio) {
-                            itemIn.detail.map((detailItem)=>{
-                                if(detailItem.key === "前端介紹"){
-                                    detailItem.pageDetailData.tabData.map((routerDOM)=>{
-                                        if(routerDOM.key === "路由系統"){
-                                            setRouterDOMPageTitle(routerDOM.frontWebPageTitle);
-                                            setRouterDOMPageText(routerDOM.frontWebPageText);
-                                            routerDOM.frontWebImg.map((routerDOMImg)=>{
-                                                setRouterDOMPageImg(routerDOMImg.img);
+                            itemIn.framework.map((workData)=>{
+                                if(workData.frameName === frameData){
+                                    workData.detail.map((detailItem)=>{
+                                        if(detailItem.key === "前端介紹"){
+                                            detailItem.pageDetailData.tabData.map((routerDOM)=>{
+                                                if(routerDOM.key === "路由系統"){
+                                                    setRouterDOMPageTitle(routerDOM.frontWebPageTitle);
+                                                    setRouterDOMPageText(routerDOM.frontWebPageText);
+                                                    routerDOM.frontWebImg.map((routerDOMImg)=>{
+                                                        setRouterDOMPageImg(routerDOMImg.img);
+                                                    });
+                                                }
                                             });
                                         }
-                                    });
+                                    })
                                 }
-                            });
+                            })
                         }
                     });
                 }

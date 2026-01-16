@@ -5,6 +5,7 @@ import './_RWDData.scss';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useUserData } from '../../../../../components/common/Context';
+import { useSelector } from 'react-redux';
 
 
 function RWDData() {
@@ -14,11 +15,23 @@ function RWDData() {
         useEffect(()=>{},[id_portfolio]);
     //#endregion
 
+    //#region 取得框架資料
+        const frameData = useSelector((state)=>{
+            return(
+                state.data.data
+            )
+        })
+
+        useEffect(()=>{
+            //console.log("框架資料:",frameData);
+        },[frameData])
+    //#endregion
+
     //#region 解構userData
         const { userData } = useUserData() ?? { userData: null };
         useEffect(()=>{
             handleRWDData(userData);
-        },[userData])
+        },[frameData])
     //#endregion
 
     //#region RWDData頁面標題狀態宣告
@@ -55,17 +68,21 @@ function RWDData() {
                 if (navItem.title === "作品集") {
                     navItem.portfolio.map((itemIn) => {
                         if (itemIn.title === id_portfolio) {
-                            itemIn.detail.map((detailItem)=>{
-                                if(detailItem.key === "前端介紹"){
-                                    detailItem.pageDetailData.tabData.map((rwdData)=>{
-                                        if(rwdData.key === "RWD功能"){
-                                            setRWDDataPageTitle(rwdData.frontWebPageTitle);
-                                            setRWDDataPageText(rwdData.frontWebPageText);
-                                            setRWDDataPageImg(rwdData.frontWebImg);
+                            itemIn.framework.map((workData)=>{
+                                if(workData.frameName === frameData){
+                                    workData.detail.map((detailItem)=>{
+                                        if(detailItem.key === "前端介紹"){
+                                            detailItem.pageDetailData.tabData.map((rwdData)=>{
+                                                if(rwdData.key === "RWD功能"){
+                                                    setRWDDataPageTitle(rwdData.frontWebPageTitle);
+                                                    setRWDDataPageText(rwdData.frontWebPageText);
+                                                    setRWDDataPageImg(rwdData.frontWebImg);
+                                                }
+                                            });
                                         }
-                                    });
+                                    })
                                 }
-                            });
+                            })
                         }
                     });
                 }

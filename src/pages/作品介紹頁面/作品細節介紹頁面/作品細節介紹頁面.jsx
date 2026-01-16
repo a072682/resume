@@ -1,26 +1,21 @@
-import { useEffect, useState } from 'react'
+
 import { Tab, Nav, Dropdown } from 'react-bootstrap';//宣告元件
-import './_作品介紹頁面.scss';
-import { useParams } from 'react-router-dom';
-import 作品細節介紹頁面 from './作品細節介紹頁面/作品細節介紹頁面';
-import { useDispatch } from 'react-redux';
-import { dataUpLoad } from '../../slice/dataSlice';
-import { useUserData } from '../../components/common/Context';
+import { useUserData } from '../../../components/common/Context';
+import './_作品細節介紹頁面.scss';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 
 
 
-function 作品介紹頁面 () {
+function 作品細節介紹頁面 () {
 
     //#region 
     //#endregion
 
-    //#region 讀取中央函式前置宣告
-    const dispatch = useDispatch();
-    //#endregion
-
-    //#region 資料來源
+    //#region 資料源頭
 
         //#region 取得id
         const { id_portfolio } = useParams();
@@ -29,16 +24,42 @@ function 作品介紹頁面 () {
         },[id_portfolio]);
         //#endregion
 
+        //#region 取得框架資料
+        const frameData = useSelector((state)=>{
+            return(
+                state.data.data
+            )
+        })
+        //#endregion
+
         //#region 解構userData 獲取來源資料
         const { userData } = useUserData() ?? { userData: null };
         //#endregion
 
-        //#region 處理顯示資料
+    //#endregion
     
+    //#region 傳送網頁前置宣告
+    const navigate = useNavigate();
+    //#endregion
+
+    //#region 作品介紹選項設定
+    const [introduceItemData,setIntroduceItemData] = useState('作品整體架構');
+    useEffect(()=>{
+        if(introduceItemData === "返回目錄"){
+            navigate("/");
+        }
+    },[introduceItemData]);
+    //#endregion
+
+    //#region 宣告選項列表狀態
+    const [introduceListData,setIntroduceListData] = useState([]);
+    useEffect(()=>{
+        //console.log("過濾後資料:",introduceListData);
+    },[introduceListData]);
     //#endregion
 
     //#region 過濾作品資料函式
-    const handleFrameListData = (input) => {
+    const handleProjectData = (input) => {
 
         const results = [];
 
@@ -50,7 +71,12 @@ function 作品介紹頁面 () {
             if (item.title === "作品集") {
                 item.portfolio.map((itemIn) => {
                     if (itemIn.title === id_portfolio) {
-                        results.push(...itemIn.framework);
+                        itemIn.framework.map((framework)=>{
+                            if(framework.frameName === frameData){
+                                console.log("過濾後資料01:",framework.detail);
+                                results.push(...framework.detail);
+                            }
+                        })
                     }
                 });
             }
@@ -58,39 +84,12 @@ function 作品介紹頁面 () {
 
         return results;
     }
-    //#endregion
 
-    //#region 宣告tabListData狀態
-    const [frameName,setFrameName] = useState('React&Vite');
+    //#region 處理顯示資料
     useEffect(()=>{
-        dispatch(dataUpLoad(frameName));
-        console.log("資料上傳",frameName);
-    },[frameName]);
-    //#endregion
-    
-
-    //#region 桌面版相關函式
-        //#region tab顯示設定
-        const [frameListData, setFrameListData] = useState([]);
-        useEffect(()=>{
-            //console.log("框架列表資料",frameListData);
-        },[frameListData])
-
-        // const tabListData = [
-        //     {
-        //         title:"React&Vite",
-        //         key:"React&Vite",
-        //         pageData:"",
-        //         disabled: false,
-        //     },
-        //     {
-        //         title:"Next",
-        //         key:"Next",
-        //         pageData:"",
-        //         disabled: false,
-        //     },
-        // ]
-        //#endregion
+        //console.log("全部資料:",userData);
+        setIntroduceListData(handleProjectData(userData));
+    },[frameData]);
     //#endregion
 
     //#region 手機版相關函式
@@ -100,33 +99,42 @@ function 作品介紹頁面 () {
         useEffect(()=>{},[show])
     //#endregion
 
-    //#region 資料處理
-    useEffect(()=>{
-        //console.log("全部資料:",userData);
-        setFrameListData(handleFrameListData(userData));
-    },[userData]);
-    //#endregion
-
     return(
         <>
             {/* 元件最外圍 */}
-            <section className="作品介紹頁面">
+            <section className="作品細節介紹頁面">
                 <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            {/* 桌面板標題區塊 */}
+                            <div className='portfolio-title-box d-none d-sm-block'>
+                                <h2 className='title-set bottom-line'>{`作品資訊 ${id_portfolio}`}</h2>
+                            </div>
+                            {/* 桌面板標題區塊 */}
+
+                            {/* 手機板標題區塊 */}
+                            <div className='portfolio-title-mb-box d-block d-sm-none'>
+                                <h2 className='title-set'>作品資訊</h2>
+                                <h2 className='title-set bottom-line'>{id_portfolio}</h2>
+                            </div>
+                            {/* 手機板標題區塊 */}
+                        </div>
+                    </div>
                     <div className="row">
                         <div className="col">
                             {/* 內容區塊 */}
                             <div className="portfolioDetailContentBox">
-                                <Tab.Container activeKey={frameName} onSelect={(key) => setFrameName(key)}>
+                                <Tab.Container activeKey={introduceItemData} onSelect={(key) => setIntroduceItemData(key)}>
                                     {/* Tab 桌面板選單區 */}
                                     <Nav className='tab-box d-none d-sm-flex'>
                                     {
-                                        frameListData?.map((item)=>{
+                                        introduceListData?.map((item)=>{
                                             return(   
                                                 <Nav.Item key={item.key} className='tab-item'>
                                                     <Nav.Link   className={`tab-link ${item.disabled ? 'is-disabled' : ''}`} 
                                                                 aria-disabled={item.disabled} 
                                                                 eventKey={item.key}>
-                                                        {item.frameName}
+                                                        {item.title}
                                                     </Nav.Link>
                                                 </Nav.Item>
                                                 
@@ -143,7 +151,7 @@ function 作品介紹頁面 () {
 
                                             <Dropdown.Toggle as="div" onClick={() => {setShow(!show);}}> 
                                                 <span className='title-dropdown' >
-                                                    {frameName}
+                                                    {introduceItemData}
                                                     <span className="material-symbols-outlined">
                                                         keyboard_arrow_down
                                                     </span>
@@ -153,7 +161,7 @@ function 作品介紹頁面 () {
                                             <Dropdown.Menu className="triple-dropdown-menu">
                                                 <div className="menu-column main-menu">
                                                     {
-                                                        frameListData?.map((item)=>{
+                                                        introduceListData?.map((item)=>{
                                                             return(
                                                                 <Nav.Item key={item.key} className='menu-btn'>
                                                                     <Nav.Link   className={`tab-link${item.disabled ? 'is-disabled' : ''}`} 
@@ -161,7 +169,7 @@ function 作品介紹頁面 () {
                                                                                 eventKey={item.key}
                                                                                 onClick={() => {setShow(!show);}}
                                                                     >
-                                                                        {item.frameName}
+                                                                        {item.title}
                                                                     </Nav.Link>
                                                                 </Nav.Item>
                                                             )
@@ -177,13 +185,11 @@ function 作品介紹頁面 () {
                                     {/* Tab 內容區 */}
                                     <Tab.Content className='h-100'>
                                         {
-                                            frameListData?.map((item)=>{
+                                            introduceListData?.map((item)=>{
                                                 return(
-                                                    
                                                     <Tab.Pane key={item.key} eventKey={item.key}>
-                                                        <作品細節介紹頁面 />
+                                                        {item.pageData}
                                                     </Tab.Pane>
-                                                    
                                                 )
                                             })
                                         }
@@ -202,6 +208,6 @@ function 作品介紹頁面 () {
   
 }
 
-export default 作品介紹頁面;
+export default 作品細節介紹頁面;
 
 

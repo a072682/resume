@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import './_GitHubData.scss';
 import { useEffect, useState } from 'react';
 import { useUserData } from '../../../../../components/common/Context';
+import { useSelector } from 'react-redux';
 
 
 function GitHubData() {
@@ -13,11 +14,23 @@ function GitHubData() {
         useEffect(()=>{},[id_portfolio]);
     //#endregion
 
+    //#region 取得框架資料
+        const frameData = useSelector((state)=>{
+            return(
+                state.data.data
+            )
+        })
+
+        useEffect(()=>{
+            //console.log("框架資料:",frameData);
+        },[frameData])
+    //#endregion
+
     //#region 解構userData
         const { userData } = useUserData() ?? { userData: null };
         useEffect(()=>{
             handleGitHubData(userData);
-        },[userData])
+        },[frameData])
     //#endregion
 
     //#region GitHubData頁面標題狀態宣告
@@ -54,17 +67,21 @@ function GitHubData() {
                 if (navItem.title === "作品集") {
                     navItem.portfolio.map((itemIn) => {
                         if (itemIn.title === id_portfolio) {
-                            itemIn.detail.map((detailItem)=>{
-                                if(detailItem.key === "前端介紹"){
-                                    detailItem.pageDetailData.tabData.map((gitHubData)=>{
-                                        if(gitHubData.key === "GIT多人協作專案"){
-                                            setGitHubDataPageTitle(gitHubData.frontWebPageTitle);
-                                            setGitHubDataPageText(gitHubData.frontWebPageText);
-                                            setGitHubDataPageImg(gitHubData.frontWebImg);
+                            itemIn.framework.map((workData)=>{
+                                if(workData.frameName === frameData){
+                                    workData.detail.map((detailItem)=>{
+                                        if(detailItem.key === "前端介紹"){
+                                            detailItem.pageDetailData.tabData.map((gitHubData)=>{
+                                                if(gitHubData.key === "GIT多人協作專案"){
+                                                    setGitHubDataPageTitle(gitHubData.frontWebPageTitle);
+                                                    setGitHubDataPageText(gitHubData.frontWebPageText);
+                                                    setGitHubDataPageImg(gitHubData.frontWebImg);
+                                                }
+                                            });
                                         }
-                                    });
+                                    })
                                 }
-                            });
+                            })
                         }
                     });
                 }

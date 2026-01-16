@@ -4,6 +4,7 @@ import { Tab, Nav, Dropdown } from 'react-bootstrap';//宣告元件
 import './_FrontWeb.scss';
 import { useParams } from 'react-router-dom';
 import { useUserData } from '../../../../components/common/Context';
+import { useSelector } from 'react-redux';
 
 
 function FrontWeb() {
@@ -15,16 +16,26 @@ function FrontWeb() {
         useEffect(()=>{},[id_portfolio]);
     //#endregion
 
+    //#region 取得框架資料
+        const frameData = useSelector((state)=>{
+            return(
+                state.data.data
+            )
+        })
+    //#endregion
+
     //#region 解構userData
         const { userData } = useUserData() ?? { userData: null };
         useEffect(()=>{
             handlefrontWebTabData(userData);
-        },[userData])
+        },[frameData])
     //#endregion
 
     //#region 儲存顯示資料狀態宣告
         const[frontWebTabData,setFrontWebTabData]=useState(null);
-        useEffect(()=>{},[frontWebTabData]);
+        useEffect(()=>{
+            console.log("看看結果",frontWebTabData);
+        },[frontWebTabData]);
     //#endregion
 
     //#region 處理顯示資料函式
@@ -40,10 +51,14 @@ function FrontWeb() {
                 if (navItem.title === "作品集") {
                     navItem.portfolio.map((itemIn) => {
                         if (itemIn.title === id_portfolio) {
-                            itemIn.detail.map((detailItem)=>{
-                                if(detailItem.key === "前端介紹"){
-                                    setFrontWebTabData(detailItem.pageDetailData.tabData);
-                                    // results = detailItem.pageDetailData.tabData;
+                            itemIn.framework.map((workData)=>{
+                                if(workData.frameName === frameData){
+                                    workData.detail.map((detailItem)=>{
+                                        if(detailItem.key === "前端介紹"){
+                                            setFrontWebTabData(detailItem.pageDetailData.tabData);
+                                            // results = detailItem.pageDetailData.tabData;
+                                        }
+                                    })
                                 }
                             })
                         }

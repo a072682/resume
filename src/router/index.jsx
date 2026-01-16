@@ -6,7 +6,6 @@ import 作品集 from "../pages/作品集/作品集";
 import 技能 from "../pages/技能/技能";
 import 作品介紹頁面 from "../pages/作品介紹頁面/作品介紹頁面";
 
-
 const router = createHashRouter([ //createHashRouter為建立router的方法
 	{
 		path:"/",
@@ -32,8 +31,6 @@ const router = createHashRouter([ //createHashRouter為建立router的方法
                 path: "作品介紹頁面/:id_portfolio",
                 element: <作品介紹頁面 />,
             },
-
-            
         ]
 	}
 ])

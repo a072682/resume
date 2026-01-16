@@ -4,75 +4,95 @@ import { useParams } from 'react-router-dom';
 import './_WebsiteStructure.scss';
 import { useEffect, useState } from 'react';
 import { useUserData } from '../../../../components/common/Context';
+import { useSelector } from 'react-redux';
 
 
 
 
 function WebsiteStructure() {
 
-    //#region 取得id
-        const { id_portfolio } = useParams();
-        useEffect(()=>{},[id_portfolio]);
-    //#endregion
+    //#region 資料來源
 
-    //#region 解構userData
+        //#region 取得id
+            const { id_portfolio } = useParams();
+            useEffect(()=>{},[id_portfolio]);
+        //#endregion
+
+        //#region 取得框架資料
+        const frameData = useSelector((state)=>{
+            return(
+                state.data.data
+            )
+        })
+
+        useEffect(()=>{
+            //console.log("框架資料:",frameData);
+            //setOrderListData(allOrderData);
+        },[frameData])
+        //#endregion
+
+        //#region 解構userData
         const { userData } = useUserData() ?? { userData: null };
+        //#endregion
+
     //#endregion
 
     //#region 處理顯示資料
         useEffect(()=>{
             handleWebsiteStructureData(userData);
             // console.log("單頁資料",userData);
-        },[userData]);
+        },[frameData]);
     //#endregion
 
     //#region websiteStructure頁面圖片狀態宣告
         const[websiteStructureImg,setWebsiteStructureImg]=useState(null);
         useEffect(()=>{
-            // console.log("圖片資料:",websiteStructureImg);
+            //console.log("圖片資料:",websiteStructureImg);
         },[websiteStructureImg]);
     //#endregion
 
     //#region websiteStructure頁面圖片狀態宣告
         const[websiteStructureText,setWebsiteStructureText]=useState(null);
         useEffect(()=>{
-            // console.log("文字資料:",websiteStructureText);
+            console.log("文字資料:",websiteStructureText);
         },[websiteStructureText]);
     //#endregion
         
     //#region 處理顯示資料函式
-        const handleWebsiteStructureData = (input) => {
-            let results = {};
+    const handleWebsiteStructureData = (input) => {
+        let results = {};
 
-            if(!input){
-                console.log("來源資料為空");
-                return;
+        if(!input){
+            console.log("來源資料為空");
+            return;
+        }
+
+        input.navItem.map((item) => {
+            if (item.title === "作品集") {
+                item.portfolio.map((itemIn) => {
+                    if (itemIn.title === id_portfolio) {
+                        itemIn.framework.map((workData)=>{
+                            if(workData.frameName === frameData){
+                                workData.detail.map((detailPage)=>{
+                                    if(detailPage.key === "作品整體架構"){
+                                        results = {...detailPage};
+                                        setWebsiteStructureImg(detailPage.pageDetailData.pageImg);
+                                        setWebsiteStructureText(detailPage.pageDetailData.detailData);
+                                    }else{
+                                        console.log("作品整體架構頁面未搜尋到");
+                                        return;
+                                    }
+                                })
+                            }
+                        })
+                    }
+                });
             }
+        });
 
-            input.navItem.map((item) => {
-                if (item.title === "作品集") {
-                    item.portfolio.map((itemIn) => {
-                        if (itemIn.title === id_portfolio) {
-                            itemIn.detail.map((detailPage)=>{
-                                if(detailPage.key === "作品整體架構"){
-                                    results = {...detailPage};
-                                    setWebsiteStructureImg(detailPage.pageDetailData.pageImg);
-                                    setWebsiteStructureText(detailPage.pageDetailData.detailData);
-                                }else{
-                                    console.log("作品整體架構頁面未搜尋到");
-                                    return;
-                                }
-                            })
-                        }
-                    });
-                }
-            });
-
-            return results;
-        };
+        return results;
+    };
     //#endregion
-
-
 
     return (
         <>

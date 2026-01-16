@@ -7,6 +7,7 @@ import UserSide from './UserSide/UserSide';
 import ManagerSide from './ManagerSide/ManagerSide';
 import { useParams } from 'react-router-dom';
 import { useUserData } from '../../../../components/common/Context';
+import { useSelector } from 'react-redux';
 
 
 
@@ -22,11 +23,19 @@ function DemoPage() {
         useEffect(()=>{},[id_portfolio]);
     //#endregion
 
+    //#region 取得框架資料
+    const frameData = useSelector((state)=>{
+        return(
+            state.data.data
+        )
+    })
+    //#endregion
+
     //#region 解構userData
         const { userData } = useUserData() ?? { userData: null };
         useEffect(()=>{
             handleDemoTabData(userData);
-        },[userData])
+        },[frameData])
     //#endregion
 
     //#region 儲存顯示資料狀態宣告
@@ -47,10 +56,14 @@ function DemoPage() {
                 if (navItem.title === "作品集") {
                     navItem.portfolio.map((itemIn) => {
                         if (itemIn.title === id_portfolio) {
-                            itemIn.detail.map((detailItem)=>{
-                                if(detailItem.key === "Demo"){
-                                    setDemoTabData(detailItem.pageDetailData.tabData);
-                                    // results = detailItem.pageDetailData.tabData;
+                            itemIn.framework.map((workData)=>{
+                                if(workData.frameName === frameData){
+                                    workData.detail.map((detailItem)=>{
+                                        if(detailItem.key === "Demo"){
+                                            setDemoTabData(detailItem.pageDetailData.tabData);
+                                            // results = detailItem.pageDetailData.tabData;
+                                        }
+                                    })
                                 }
                             })
                         }

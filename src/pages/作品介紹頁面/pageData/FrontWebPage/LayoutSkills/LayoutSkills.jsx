@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import './_LayoutSkills.scss';
 import { useUserData } from '../../../../../components/common/Context';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 
 function LayoutSkills() {
@@ -13,11 +14,23 @@ function LayoutSkills() {
         useEffect(()=>{},[id_portfolio]);
     //#endregion
 
+    //#region 取得框架資料
+        const frameData = useSelector((state)=>{
+            return(
+                state.data.data
+            )
+        })
+
+        useEffect(()=>{
+            //console.log("框架資料:",frameData);
+        },[frameData])
+    //#endregion
+
     //#region 解構userData
         const { userData } = useUserData() ?? { userData: null };
         useEffect(()=>{
             handleLayoutSkillsData(userData);
-        },[userData])
+        },[frameData])
     //#endregion
 
     //#region LayoutSkills頁面標題狀態宣告
@@ -44,7 +57,7 @@ function LayoutSkills() {
     //#region LayoutSkills頁面文字狀態宣告
         const[figmaLink,setfigmaLink]=useState(null);
         useEffect(()=>{
-            console.log("連結資料:",figmaLink);
+            //console.log("連結資料:",figmaLink);
         },[figmaLink]);
     //#endregion
 
@@ -68,19 +81,23 @@ function LayoutSkills() {
                 if (navItem.title === "作品集") {
                     navItem.portfolio.map((itemIn) => {
                         if (itemIn.title === id_portfolio) {
-                            itemIn.detail.map((detailItem)=>{
-                                if(detailItem.key === "前端介紹"){
-                                    detailItem.pageDetailData.tabData.map((layoutSkills)=>{
-                                        if(layoutSkills.key === "切版能力"){
-                                            setLayoutSkillsPageTitle(layoutSkills.frontWebPageTitle);
-                                            setLayoutSkillsPageText(layoutSkills.frontWebPageText);
-                                            setFigmaTitle(layoutSkills.frontWebPageLinkName);
-                                            setfigmaLink(layoutSkills.frontWebPageLink);
-                                            setLayoutSkillsPageImg(layoutSkills.frontWebImg);
+                            itemIn.framework.map((workData)=>{
+                                if(workData.frameName === frameData){
+                                    workData.detail.map((detailItem)=>{
+                                        if(detailItem.key === "前端介紹"){
+                                            detailItem.pageDetailData.tabData.map((layoutSkills)=>{
+                                                if(layoutSkills.key === "切版能力"){
+                                                    setLayoutSkillsPageTitle(layoutSkills.frontWebPageTitle);
+                                                    setLayoutSkillsPageText(layoutSkills.frontWebPageText);
+                                                    setFigmaTitle(layoutSkills.frontWebPageLinkName);
+                                                    setfigmaLink(layoutSkills.frontWebPageLink);
+                                                    setLayoutSkillsPageImg(layoutSkills.frontWebImg);
+                                                }
+                                            });
                                         }
-                                    });
+                                    })
                                 }
-                            });
+                            })
                         }
                     });
                 }

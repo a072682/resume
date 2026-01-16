@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import './_ServerPage.scss';
 import { useParams } from 'react-router-dom';
 import { useUserData } from '../../../../components/common/Context';
+import { useSelector } from 'react-redux';
 
 
 function ServerPage() {
@@ -11,6 +12,19 @@ function ServerPage() {
     //#region 取得id
         const { id_portfolio } = useParams();
         useEffect(()=>{},[id_portfolio]);
+    //#endregion
+
+    //#region 取得框架資料
+        const frameData = useSelector((state)=>{
+            return(
+                state.data.data
+            )
+        })
+
+        useEffect(()=>{
+            //console.log("框架資料:",frameData);
+            //setOrderListData(allOrderData);
+        },[frameData])
     //#endregion
 
     //#region 解構userData
@@ -21,7 +35,7 @@ function ServerPage() {
         useEffect(()=>{
             handleServerPageData(userData);
             // console.log("單頁資料",userData);
-        },[userData]);
+        },[frameData]);
     //#endregion
 
     //#region websiteStructure頁面圖片狀態宣告
@@ -57,16 +71,20 @@ function ServerPage() {
                 if (item.title === "作品集") {
                     item.portfolio.map((itemIn) => {
                         if (itemIn.title === id_portfolio) {
-                            itemIn.detail.map((detailPage)=>{
-                                if(detailPage.key === "伺服器端介紹"){
-                                    detailPage.pageDataImg?.map((imgData)=>{
-                                        setServerPageImg(imgData.img);
+                            itemIn.framework.map((workData)=>{
+                                if(workData.frameName === frameData){
+                                    workData.detail.map((detailPage)=>{
+                                        if(detailPage.key === "伺服器端介紹"){
+                                            detailPage.pageDataImg?.map((imgData)=>{
+                                                setServerPageImg(imgData.img);
+                                            })
+                                            setServerPageTitle(detailPage.pageDataTitle);
+                                            setServerPageText(detailPage.pageDataText);
+                                        }else{
+                                            console.log("伺服器端介紹頁面未搜尋到");
+                                            return;
+                                        }
                                     })
-                                    setServerPageTitle(detailPage.pageDataTitle);
-                                    setServerPageText(detailPage.pageDataText);
-                                }else{
-                                    console.log("伺服器端介紹頁面未搜尋到");
-                                    return;
                                 }
                             })
                         }

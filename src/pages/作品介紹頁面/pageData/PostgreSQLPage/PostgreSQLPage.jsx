@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import './_PostgreSQLPage.scss';
 import { useParams } from 'react-router-dom';
 import { useUserData } from '../../../../components/common/Context';
+import { useSelector } from 'react-redux';
+
 
 
 function PostgreSQLPage() {
@@ -11,6 +13,19 @@ function PostgreSQLPage() {
     //#region 取得id
         const { id_portfolio } = useParams();
         useEffect(()=>{},[id_portfolio]);
+    //#endregion
+
+    //#region 取得框架資料
+        const frameData = useSelector((state)=>{
+            return(
+                state.data.data
+            )
+        })
+
+        useEffect(()=>{
+            //console.log("框架資料:",frameData);
+            //setOrderListData(allOrderData);
+        },[frameData])
     //#endregion
 
     //#region 解構userData
@@ -21,7 +36,7 @@ function PostgreSQLPage() {
         useEffect(()=>{
             handlePostgreSQLPageData(userData);
             // console.log("單頁資料",userData);
-        },[userData]);
+        },[frameData]);
     //#endregion
 
     //#region websiteStructure頁面標題狀態宣告
@@ -57,18 +72,23 @@ function PostgreSQLPage() {
                 if (item.title === "作品集") {
                     item.portfolio.map((itemIn) => {
                         if (itemIn.title === id_portfolio) {
-                            itemIn.detail.map((detailPage)=>{
-                                if(detailPage.key === "資料庫端介紹"){
-                                    detailPage.pageDataImg?.map((imgData)=>{
-                                        setPostgreSQLPageImg(imgData.img);
+                            itemIn.framework.map((workData)=>{
+                                if(workData.frameName === frameData){
+                                    workData.detail.map((detailPage)=>{
+                                        if(detailPage.key === "資料庫端介紹"){
+                                            detailPage.pageDataImg?.map((imgData)=>{
+                                                setPostgreSQLPageImg(imgData.img);
+                                            })
+                                            setPostgreSQLPageTitle(detailPage.pageDataTitle);
+                                            setPostgreSQLPageText(detailPage.pageDataText);
+                                        }else{
+                                            console.log("資料庫端介紹頁面未搜尋到");
+                                            return;
+                                        }
                                     })
-                                    setPostgreSQLPageTitle(detailPage.pageDataTitle);
-                                    setPostgreSQLPageText(detailPage.pageDataText);
-                                }else{
-                                    console.log("資料庫端介紹頁面未搜尋到");
-                                    return;
                                 }
                             })
+                            
                         }
                     });
                 }
