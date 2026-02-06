@@ -23,38 +23,38 @@ function 目前經歷 (){
         {   
             id:1,
             projectType:"個人專案",
-            title:"Vivre旅遊資訊網頁",
-            img:`/images/作品集/Vivre旅遊資訊網頁/web-img01-02.png`,
+            title:"異環技術複現網站",
+            img:`/images/作品集/異環技術複現網站/預覽畫面.png`,
         },
         {   
             id:2,
-            projectType:"個人專案",
-            title:"LEARNING學習平台",
-            img:`/images/作品集/LEARNING線上學習平台/web-img02-02.png`,
-        },
-        {   
-            id:3,
-            projectType:"個人專案",
-            title:"品牌形象網站",
-            img:`/images/作品集/品牌形象網站/web-img03.png`,
-        },
-        {   
-            id:4,
-            projectType:"個人專案",
-            title:"服裝購物形象網站",
-            img:`/images/作品集/服裝購物形象網站/web-img04-02.png`,
-        },
-        {   
-            id:5,
             projectType:"團隊專案",
             title:"ComeBuyTeamWork",
             img:`/images/作品集/ComeBuyTeamWork/web-img06-02.png`,
         },
         {   
+            id:3,
+            projectType:"個人專案",
+            title:"服裝購物形象網站",
+            img:`/images/作品集/服裝購物形象網站/web-img04-02.png`,
+        },
+        {   
+            id:4,
+            projectType:"個人專案",
+            title:"品牌形象網站",
+            img:`/images/作品集/品牌形象網站/web-img03.png`,
+        },
+        {   
+            id:5,
+            projectType:"個人專案",
+            title:"LEARNING學習平台",
+            img:`/images/作品集/LEARNING線上學習平台/web-img02-02.png`,
+        },
+        {   
             id:6,
             projectType:"個人專案",
-            title:"異環技術複現網站",
-            img:`/images/作品集/異環技術複現網站/預覽畫面.png`,
+            title:"Vivre旅遊資訊網頁",
+            img:`/images/作品集/Vivre旅遊資訊網頁/web-img01-02.png`,
         },
     ]
 

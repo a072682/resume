@@ -17,99 +17,16 @@ function 作品集 () {
   const userData = [
       {
         tag:"WEB",
-        title:"Vivre旅遊資訊網頁",
-        img:`/images/作品集/Vivre旅遊資訊網頁/web-img01-02.png`,
+        title:"異環技術複現網站",
+        img:`/images/作品集/異環技術複現網站/預覽畫面.png`,
         textContent:[
             {
             id:1,
-            text:"這是一個靜態旅遊相關資訊平台，主要提供旅遊的相關文章。",
+            text:"這是一個服裝購物形象網站(後台)。",
             },
             {
             id:2,
-            text:"此Demo包含首頁、所有文章、訂閱方案、購買流程、關於我們等顯示頁面，以及會員驗證 / 註冊、資料搜尋等功能。",
-            },
-            {
-            id:3,
-            text:"使用 React 和 bootstrap,react-router,Redux-Toolkit,SCSS,Swiper,gh-pages等套件。",
-            },
-            {
-            id:4,
-            text:"主要體現在切版上以及前端的功能運行的實現能力。",
-            },
-            {
-            id:5,
-            text:"預設帳號為admin123,密碼:admin123",
-            },
-        ],
-        gitHub:"https://github.com/a072682/HomeWork-Week-6",
-        demo:"https://a072682.github.io/HomeWork-Week-6/",
-      },
-      {
-        tag:"WEB",
-        title:"LEARNING學習平台",
-        img:`/images/作品集/LEARNING線上學習平台/web-img02-02.png`,
-        textContent:[
-            {
-            id:1,
-            text:"這是一個靜態線上學習平台，主要提供多種的線上課程。",
-            },
-            {
-            id:2,
-            text:"此Demo包含首頁、所有文章、課程頁面購物車、購買流程、教師資訊等顯示頁面，以及會員驗證、資料搜尋等功能。",
-            },
-            {
-            id:3,
-            text:"使用 React 和 bootstrap,react-router,Redux-Toolkit,SCSS,Swiper,gh-pages等套件。",
-            },
-            {
-            id:4,
-            text:"主要體現在切版上以及前端的功能運行的實現能力。",
-            },
-            {
-            id:5,
-            text:"預設信箱為admin123@gmail.com,密碼:admin123",
-            },
-        ],
-        gitHub:"https://github.com/a072682/HomeWork-Week-8",
-        demo:"https://a072682.github.io/HomeWork-Week-8/",
-      },
-      {
-        tag:"WEB",
-        title:"品牌形象網站",
-        img:`/images/作品集/品牌形象網站/web-img03.png`,
-        textContent:[
-            {
-            id:1,
-            text:"這是一個靜態品牌形象網站。",
-            },
-            {
-            id:2,
-            text:"此Demo包含首頁、部落格、閱讀內文等顯示頁面。",
-            },
-            {
-            id:3,
-            text:"使用 React 和 bootstrap,react-router,Redux-Toolkit,SCSS,Swiper,gh-pages等套件。",
-            },
-            {
-            id:4,
-            text:"主要體現在切版上的實現能力",
-            },
-        ],
-        gitHub:"https://github.com/a072682/2025ExperienceCampHomeWork02",
-        demo:"https://a072682.github.io/2025ExperienceCampHomeWork02/",
-      },
-      {
-        tag:"WEB",
-        title:"服裝購物形象網站",
-        img:`/images/作品集/服裝購物形象網站/web-img04-02.png`,
-        textContent:[
-            {
-            id:1,
-            text:"這是一個服裝購物形象網站",
-            },
-            {
-            id:2,
-            text:"與服裝購物形象網站(後台)進行聯動",
+            text:"與服裝購物形象網站(前台)進行聯動",
             },
             {
             id:3,
@@ -117,19 +34,27 @@ function 作品集 () {
             },
             {
             id:4,
-            text:"此Demo包含首頁、產品頁、產品細節頁、購物車、付費頁面等顯示頁面。",
+            text:"此Demo包含產品設定、訂單設定、優惠卷設定、登入 / 燈出等顯示頁面。",
             },
             {
             id:5,
-            text:"使用 React 和 bootstrap,react-router,Redux-Toolkit,SCSS,Swiper,gh-pages等套件。",
+            text:"可以對產品進行新增/修改/刪除並與前台網站進行聯動",
             },
             {
             id:6,
+            text:"使用 React 和 bootstrap,react-router,Redux-Toolkit,SCSS,Swiper,gh-pages等套件。",
+            },
+            {
+            id:7,
             text:"主要體現在切版上以及使用API交互的實現能力",
             },
+            {
+            id:8,
+            text:"預設帳號信箱為admin123@gmail.com,密碼:admin123",
+            },
         ],
-        gitHub:"https://github.com/a072682/ReactHomeWork-8-front",
-        demo:"https://a072682.github.io/ReactHomeWork-8-front/",
+        gitHub:"https://github.com/a072682/ReactHomeWork-8-back",
+        demo:"https://a072682.github.io/ReactHomeWork-8-back/",
       },
       {
         tag:"WEB",
@@ -174,16 +99,16 @@ function 作品集 () {
       },
       {
         tag:"WEB",
-        title:"異環技術複現網站",
-        img:`/images/作品集/異環技術複現網站/預覽畫面.png`,
+        title:"服裝購物形象網站",
+        img:`/images/作品集/服裝購物形象網站/web-img04-02.png`,
         textContent:[
             {
             id:1,
-            text:"這是一個服裝購物形象網站(後台)。",
+            text:"這是一個服裝購物形象網站",
             },
             {
             id:2,
-            text:"與服裝購物形象網站(前台)進行聯動",
+            text:"與服裝購物形象網站(後台)進行聯動",
             },
             {
             id:3,
@@ -191,27 +116,102 @@ function 作品集 () {
             },
             {
             id:4,
-            text:"此Demo包含產品設定、訂單設定、優惠卷設定、登入 / 燈出等顯示頁面。",
+            text:"此Demo包含首頁、產品頁、產品細節頁、購物車、付費頁面等顯示頁面。",
             },
             {
             id:5,
-            text:"可以對產品進行新增/修改/刪除並與前台網站進行聯動",
-            },
-            {
-            id:6,
             text:"使用 React 和 bootstrap,react-router,Redux-Toolkit,SCSS,Swiper,gh-pages等套件。",
             },
             {
-            id:7,
+            id:6,
             text:"主要體現在切版上以及使用API交互的實現能力",
             },
+        ],
+        gitHub:"https://github.com/a072682/ReactHomeWork-8-front",
+        demo:"https://a072682.github.io/ReactHomeWork-8-front/",
+      },
+      {
+        tag:"WEB",
+        title:"品牌形象網站",
+        img:`/images/作品集/品牌形象網站/web-img03.png`,
+        textContent:[
             {
-            id:8,
-            text:"預設帳號信箱為admin123@gmail.com,密碼:admin123",
+            id:1,
+            text:"這是一個靜態品牌形象網站。",
+            },
+            {
+            id:2,
+            text:"此Demo包含首頁、部落格、閱讀內文等顯示頁面。",
+            },
+            {
+            id:3,
+            text:"使用 React 和 bootstrap,react-router,Redux-Toolkit,SCSS,Swiper,gh-pages等套件。",
+            },
+            {
+            id:4,
+            text:"主要體現在切版上的實現能力",
             },
         ],
-        gitHub:"https://github.com/a072682/ReactHomeWork-8-back",
-        demo:"https://a072682.github.io/ReactHomeWork-8-back/",
+        gitHub:"https://github.com/a072682/2025ExperienceCampHomeWork02",
+        demo:"https://a072682.github.io/2025ExperienceCampHomeWork02/",
+      },
+      {
+        tag:"WEB",
+        title:"LEARNING學習平台",
+        img:`/images/作品集/LEARNING線上學習平台/web-img02-02.png`,
+        textContent:[
+            {
+            id:1,
+            text:"這是一個靜態線上學習平台，主要提供多種的線上課程。",
+            },
+            {
+            id:2,
+            text:"此Demo包含首頁、所有文章、課程頁面購物車、購買流程、教師資訊等顯示頁面，以及會員驗證、資料搜尋等功能。",
+            },
+            {
+            id:3,
+            text:"使用 React 和 bootstrap,react-router,Redux-Toolkit,SCSS,Swiper,gh-pages等套件。",
+            },
+            {
+            id:4,
+            text:"主要體現在切版上以及前端的功能運行的實現能力。",
+            },
+            {
+            id:5,
+            text:"預設信箱為admin123@gmail.com,密碼:admin123",
+            },
+        ],
+        gitHub:"https://github.com/a072682/HomeWork-Week-8",
+        demo:"https://a072682.github.io/HomeWork-Week-8/",
+      },
+      {
+        tag:"WEB",
+        title:"Vivre旅遊資訊網頁",
+        img:`/images/作品集/Vivre旅遊資訊網頁/web-img01-02.png`,
+        textContent:[
+            {
+            id:1,
+            text:"這是一個靜態旅遊相關資訊平台，主要提供旅遊的相關文章。",
+            },
+            {
+            id:2,
+            text:"此Demo包含首頁、所有文章、訂閱方案、購買流程、關於我們等顯示頁面，以及會員驗證 / 註冊、資料搜尋等功能。",
+            },
+            {
+            id:3,
+            text:"使用 React 和 bootstrap,react-router,Redux-Toolkit,SCSS,Swiper,gh-pages等套件。",
+            },
+            {
+            id:4,
+            text:"主要體現在切版上以及前端的功能運行的實現能力。",
+            },
+            {
+            id:5,
+            text:"預設帳號為admin123,密碼:admin123",
+            },
+        ],
+        gitHub:"https://github.com/a072682/HomeWork-Week-6",
+        demo:"https://a072682.github.io/HomeWork-Week-6/",
       },
   ]
 
