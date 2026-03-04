@@ -199,7 +199,7 @@ export const ContextProvider = ({ children }) => {
                                         pageDataTitle:"Server 架構說明（Express.js + PostgreSQL）",
                                         pageDataLink:null,
                                         pageDataLinkName:null,
-                                        pageDataText:"此伺服器以 Node.js + Express 為基礎，採用模組化架構設計，將各功能依職責劃分層次。每一層都負責特定任務，讓專案在維護、除錯與擴充上更有彈性與可讀性。",
+                                        pageDataText:"此伺服器以 Node.js + Express 為基礎，使用REST-API架構並且模組化設計，將各功能依職責劃分層次。每一層都負責特定任務，讓專案在維護、除錯與擴充上更有彈性與可讀性。",
                                         pageDataImg:[
                                             {
                                                 img:`/images/作品集/異環技術複現網站/伺服器端/Server.png`,
@@ -499,7 +499,7 @@ export const ContextProvider = ({ children }) => {
                                         pageDataTitle:"Server 架構說明（Express.js + PostgreSQL）",
                                         pageDataLink:null,
                                         pageDataLinkName:null,
-                                        pageDataText:"此伺服器以 Node.js + Express 為基礎，採用模組化架構設計，將各功能依職責劃分層次。每一層都負責特定任務，讓專案在維護、除錯與擴充上更有彈性與可讀性。",
+                                        pageDataText:"此伺服器以 Node.js + Express 為基礎，使用REST-API架構並且模組化設計，將各功能依職責劃分層次。每一層都負責特定任務，讓專案在維護、除錯與擴充上更有彈性與可讀性。",
                                         pageDataImg:[
                                             {
                                                 img:`/images/作品集/ComeBuyTeamWork/伺服器端/Server.png`,
@@ -719,7 +719,7 @@ export const ContextProvider = ({ children }) => {
                                         pageDataTitle:"Server 架構說明（NEXT）",
                                         pageDataLink:null,
                                         pageDataLinkName:null,
-                                        pageDataText:"此伺服器使用 NEXT 框架，採用模組化架構設計，將各功能依職責劃分層次。每一層都負責特定任務，讓專案在維護、除錯與擴充上更有彈性與可讀性。",
+                                        pageDataText:"此伺服器使用 NEXT 框架，使用REST-API架構並且模組化設計，將各功能依職責劃分層次。每一層都負責特定任務，讓專案在維護、除錯與擴充上更有彈性與可讀性。",
                                         pageDataImg:[
                                             {
                                                 img:`/images/作品集/ComeBuyTeamWork/next/伺服器端/伺服器架構圖.png`,
