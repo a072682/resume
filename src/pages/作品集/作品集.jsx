@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import './_Portfolio.scss';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -13,8 +12,9 @@ function 作品集 () {
   //#endregion
 
   const navigate = useNavigate();
+  const { userData: contextUserData } = useUserData();
 
-  const userData = [
+  const portfolioFallbackData = [
       {
         tag:"WEB",
         title:"異環技術複現網站",
@@ -215,6 +215,8 @@ function 作品集 () {
       },
   ]
 
+  const portfolioData = contextUserData?.navItem?.find((item) => item.portfolio)?.portfolio ?? portfolioFallbackData;
+
   return(
     <>
       {/* 元件最外圍 */}
@@ -251,7 +253,7 @@ function 作品集 () {
                       prevEl: '.swiper-button-prev',
                   }}
                   >
-                  {userData.map((item,num) => (
+                  {portfolioData.map((item,num) => (
                       <SwiperSlide key={num}>
                           <button key={item.title} className='portfolio-card border-0 p-0'
                                   onClick={()=>{navigate(`/Portfolio/${item.title}`);}}>
@@ -274,7 +276,7 @@ function 作品集 () {
                 </Swiper>
                 <div className='portfolio-mb-btn-box'>
                   {
-                    userData.map((item,num) => (
+                    portfolioData.map((item,num) => (
                       <button key={item.title} className='portfolio-mb-btn border-0'
                               onClick={()=>{navigate(`/作品介紹頁面/${item.title}`);}}>
                         <p className=''>{item.title}</p>
@@ -291,7 +293,7 @@ function 作品集 () {
           {/* 桌面板作品集列表 */}
           <div className="row row-gap-24 d-none d-lg-flex">
                 {
-                  userData.map((item)=>{
+                  portfolioData.map((item)=>{
                     return(
                         <div key={item.title} className="col-4">
                           <div className='portfolio-cards-box'>

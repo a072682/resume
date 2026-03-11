@@ -20,6 +20,9 @@
         color: rgb(112, 150, 205);
         border-bottom: 3px solid rgb(112, 150, 205);
         font-weight: 500;
+        .textCNSet{
+            white-space: nowrap;//取消文字自動換行
+        }
     }
 
     .skill-list{

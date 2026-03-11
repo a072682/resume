@@ -1555,27 +1555,47 @@ export const ContextProvider = ({ children }) => {
                 title:"技能",
                 Skills:[
                     {
-                        title:"Website",
+                        titleEN:"Frontend",
+                        titleCN:"前端開發",
                         item:[
-                            "Html","CSS","JavaScript ES6+","React","Bootstrap5","Scss","Axios"
+                            "HTML5",
+                            "CSS3",
+                            "JavaScript (ES6+)",
+                            "React",
+                            "Next",
+                            "Redux Toolkit",
+                            "Bootstrap 5",
+                            "SCSS",
+                            "Axios"
                         ],
                     },
                     {
-                        title:"Tools",
+                        titleEN:"Backend",
+                        titleCN:"後端開發",
                         item:[
-                            "VisualStudioCode","PostgreSQL","DBeaver","Postman","Docker","Vite","GitHub"
+                            "Node.js","Express.js","RESTful API",
                         ],
                     },
                     {
-                        title:"Office",
+                        titleEN:"Tools / Database",
+                        titleCN:"開發工具 / 資料庫",
                         item:[
-                            "Word","Excel","PowerPoint",
+                            "Visual Studio Code",
+                            "PostgreSQL",
+                            "DBeaver",
+                            "Postman",
+                            "Docker",
+                            "Vite",
+                            "Git / GitHub",
                         ],
                     },
                     {
-                        title:"語言",
+                        titleEN:"Languages",
+                        titleCN:"語言",
                         item:[
-                            "中文","英文(初級)","日文(N5)",
+                            "中文（母語）",
+                            "英文（基礎）",
+                            "日文(N5)",
                         ],
                     },
                 ]

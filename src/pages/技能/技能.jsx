@@ -1,10 +1,12 @@
-import React from 'react'
 import './_Skills.scss';
+import { useUserData } from '../../components/common/Context';
 
 
 function 技能(){
 
-  const userData = [
+  const { userData: contextUserData } = useUserData();
+
+  const skillsFallbackData = [
       {
           title:"Website",
           item:[
@@ -31,6 +33,8 @@ function 技能(){
       },    
   ]
 
+  const skillsData = contextUserData?.navItem?.find((item) => item.Skills)?.Skills ?? skillsFallbackData;
+
   return(
     <>
       <section id="skills" className="技能 py-24">
@@ -44,12 +48,14 @@ function 技能(){
           </div>
           <div className="row">
             {
-              userData.map((item) => {
+              skillsData.map((item) => {
                 return(
                   
                   <div key={item.title} className="col-12 col-lg-3">
                     <div className="skill-group1 mt-12 px-12">
-                      <h3 className="skill-title">{item.title}</h3>
+                      <h3 className="skill-title">
+                        <p>{item.titleEN}<span className='textCNSet'>{item.titleCN}</span></p>
+                      </h3>
                       <ul className="skill-list my-12">
                         {
                           item.item.map((itemIn)=>{
